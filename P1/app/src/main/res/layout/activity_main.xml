@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="32dp"
+    android:layout_gravity="center_vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRoutines"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_home_height"
+        android:layout_marginTop="100dp"
+        android:text="@string/rutinasText"
+        android:textSize="@dimen/SizeTextBtnHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="OnClickButton"
+        android:background="@drawable/button_home_routines"
+        app:layout_constraintEnd_toStartOf="@id/btnDiary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDiary"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_home_height"
+        app:layout_constraintBottom_toTopOf="@+id/btnHistorical"
+        android:text="@string/text_diario_entrenamiento"
+        android:textSize="@dimen/SizeTextBtnHome"
+        android:onClick="OnClickButton"
+        android:background="@drawable/button_home_diary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnRoutines"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnHistorical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_home_height"
+        android:text="@string/text_historial"
+        android:textSize="@dimen/SizeTextBtnHome"
+        android:onClick="OnClickButton"
+        android:background="@drawable/button_home_historial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnDiary"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

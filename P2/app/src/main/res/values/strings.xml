@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">RunImprove</string>
-    <string name="rutinasText">Rutinas</string>
-    <string name="text_diario_entrenamiento">Diario de Entrenamiento</string>
-    <string name="text_historial">historial</string>
-</resources>

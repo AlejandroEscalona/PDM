@@ -1,45 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="298dp"
-        android:layout_height="341dp"
-        app:layout_constraintBottom_toTopOf="@id/btnTraining"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="90dp"
+        app:cardElevation="32dp"
+        android:layout_margin="16dp">
+        <ImageView
+            android:id="@+id/imgHome"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+
+            android:src="@drawable/img_home"
+            android:scaleType="centerCrop"/>
+    </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnTraining"
         android:layout_width="261dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="45dp"
+        android:elevation="32dp"
         android:background="@drawable/button_home_training"
         android:paddingHorizontal="60dp"
+        android:onClick="OnClickButton"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
         android:text="Entrenar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView2" />
+        android:textSize="16dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnHistorical"
         android:layout_width="261dp"
-        android:layout_height="63dp"
+        android:layout_marginTop="72dp"
+        android:layout_height="70dp"
+        android:onClick="OnClickButton"
         android:background="@drawable/button_home_historial"
         android:text="Historial de entrenos"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnTraining" />
+        android:textSize="16dp"
+      />
 
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

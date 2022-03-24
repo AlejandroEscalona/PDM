@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -31,7 +30,6 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this,TrainingActivity::class.java)
                 launchIntent(intent)
             }
-
             R.id.btnHistorical -> {
                 val intent = Intent(this,HistoricalActivity::class.java)
                 launchIntent(intent)
@@ -47,4 +45,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    }
+}

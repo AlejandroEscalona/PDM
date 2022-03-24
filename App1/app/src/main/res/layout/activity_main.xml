@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="16dp"
         android:paddingBottom="16dp"
-        android:paddingTop="16dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         >
@@ -21,7 +20,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="90dp"
         app:cardElevation="32dp"
-        android:layout_margin="16dp">
+        android:layout_margin="32dp">
         <ImageView
             android:id="@+id/imgHome"
             android:layout_width="256dp"

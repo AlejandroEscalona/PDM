@@ -2,10 +2,22 @@ package com.example.runimprove
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.runimprove.databinding.ActivityHistoricalBinding
 
 class HistoricalActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityHistoricalBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_historical)
+        binding = ActivityHistoricalBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true);
+        supportActionBar?.setDisplayShowHomeEnabled(true);
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return false
     }
 }

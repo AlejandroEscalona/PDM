@@ -11,10 +11,14 @@
         android:theme="@style/Theme.RunImprove">
         <activity
             android:name=".HistoricalActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Historial"
+            />
         <activity
             android:name=".TrainingActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Entrenar"
+            />
         <activity
             android:name=".MainActivity"
             android:exported="true">

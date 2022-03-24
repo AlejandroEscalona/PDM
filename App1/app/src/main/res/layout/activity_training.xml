@@ -1,9 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TrainingActivity">
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/rutinas"
+        android:textSize="@dimen/size_title_activity"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        android:textColor="@color/color_titulos"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSprints"
+            android:layout_width="300dp"
+            android:layout_marginTop="45dp"
+            android:layout_height="60dp"
+            android:onClick="OnClickButton"
+            android:background="@drawable/button_trainning_routines"
+            android:text="@string/sprints"
+            android:textSize="@dimen/text_size_training_16"
+            tools:ignore="SpUsage" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSeries"
+            android:layout_width="300dp"
+            android:layout_marginTop="45dp"
+            android:layout_height="60dp"
+            android:onClick="OnClickButton"
+            android:background="@drawable/button_trainning_routines"
+            android:text="@string/hit"
+            android:textSize="@dimen/text_size_training_16"
+            tools:ignore="SpUsage"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBajadas"
+            android:layout_width="300dp"
+            android:layout_marginTop="45dp"
+            android:layout_height="60dp"
+            android:onClick="OnClickButton"
+            android:background="@drawable/button_trainning_routines"
+            android:text="@string/bajadas"
+            android:textSize="@dimen/text_size_training_16"
+            tools:ignore="SpUsage"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnFondo"
+            android:layout_width="300dp"
+            android:layout_marginTop="45dp"
+            android:layout_height="60dp"
+            android:onClick="OnClickButton"
+            android:background="@drawable/button_trainning_routines"
+            android:text="@string/resistencia"
+            android:textSize="@dimen/text_size_training_16"
+            tools:ignore="SpUsage"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnTecnica"
+            android:layout_width="300dp"
+            android:layout_marginTop="45dp"
+            android:layout_height="60dp"
+            android:onClick="OnClickButton"
+            android:background="@drawable/button_trainning_routines"
+            android:text="@string/tecnica"
+            android:textSize="@dimen/text_size_training_16"
+            tools:ignore="SpUsage"
+            />
+
+    </LinearLayout>
+</ScrollView>

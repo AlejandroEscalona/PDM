@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">RunImprove</string>
+    <string name="rutinas">Rutinas</string>
+    <string name="sprints">Sprints</string>
+    <string name="tecnica">Técnica</string>
+    <string name="resistencia">Resistencia</string>
+    <string name="bajadas">Bajadas</string>
+    <string name="hit">Hit</string>
 </resources>

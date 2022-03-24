@@ -20,7 +20,7 @@
         android:textSize="@dimen/size_title_activity"
         android:gravity="center"
         android:layout_marginTop="32dp"
-        android:textColor="@color/color_titulos"
+        android:textColor="#553908"
         />
 
         <androidx.appcompat.widget.AppCompatButton

@@ -6,8 +6,10 @@
         <entry key="app/src/main/res/drawable-v24/button_home_historial.xml" value="0.196" />
         <entry key="app/src/main/res/drawable-v24/button_home_training.xml" value="0.196" />
         <entry key="app/src/main/res/drawable/button_trainning_routines.xml" value="0.212" />
+        <entry key="app/src/main/res/drawable/ic_baseline_speed_24.xml" value="0.212" />
         <entry key="app/src/main/res/drawable/image_home.xml" value="0.196" />
         <entry key="app/src/main/res/drawable/training_btn.xml" value="0.196" />
+        <entry key="app/src/main/res/layout/activity_historical.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_training.xml" value="0.35625" />
       </map>

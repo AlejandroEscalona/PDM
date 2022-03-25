@@ -1,60 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="32dp"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
-        android:paddingBottom="16dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        >
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="90dp"
-        app:cardElevation="32dp"
-        android:layout_margin="32dp">
-        <ImageView
-            android:id="@+id/imgHome"
-            android:layout_width="256dp"
-            android:layout_height="256dp"
+        android:id="@+id/cardTraining"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="64dp"
+        android:onClick="OnClickButton"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="64dp">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
             android:src="@drawable/img_home"
-            android:scaleType="centerCrop"/>
+            />
+
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#8c000000"
+            android:padding="10dp"
+            android:text="@string/entrenar"
+            android:textColor="#ffe3e3e3"
+            android:textSize="30sp"
+            android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnTraining"
-        android:layout_width="261dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="45dp"
-        android:elevation="32dp"
-        android:background="@drawable/button_home_training"
-        android:paddingHorizontal="60dp"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardHistorial"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="64dp"
         android:onClick="OnClickButton"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        android:text="Entrenar"
-        android:textSize="16dp" />
+        app:cardCornerRadius="30dp"
+        app:cardElevation="64dp">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnHistorical"
-        android:layout_width="261dp"
-        android:layout_marginTop="72dp"
-        android:layout_height="70dp"
-        android:onClick="OnClickButton"
-        android:background="@drawable/button_home_historial"
-        android:text="Historial de entrenos"
-        android:textSize="16dp"
-      />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:paddingBottom="50dp"
+            android:src="@drawable/historico_home" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tvHistorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#8c000000"
+            android:padding="10dp"
+            android:text="@string/historial_de_entrenamientos"
+            android:textColor="#ffe3e3e3"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:ignore="InvalidId" />
+    </androidx.cardview.widget.CardView>
 
-</ScrollView>
+
+</LinearLayout>
+

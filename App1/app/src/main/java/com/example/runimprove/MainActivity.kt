@@ -26,11 +26,11 @@ class MainActivity : AppCompatActivity() {
     fun OnClickButton(view: View){
 
         when(view.id){
-            R.id.btnTraining -> {
+            R.id.cardTraining -> {
                 val intent = Intent(this,TrainingActivity::class.java)
                 launchIntent(intent)
             }
-            R.id.btnHistorical -> {
+            R.id.cardHistorial -> {
                 val intent = Intent(this,HistoricalActivity::class.java)
                 launchIntent(intent)
             }

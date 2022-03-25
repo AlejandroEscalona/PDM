@@ -6,4 +6,6 @@
     <string name="resistencia">Resistencia</string>
     <string name="bajadas">Bajadas</string>
     <string name="hit">Hit</string>
+    <string name="historial_de_entrenamientos">Historial de Entrenamientos</string>
+    <string name="entrenar">Entrenar</string>
 </resources>

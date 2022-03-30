@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
+    android:id="@+id/containerMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -40,7 +41,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/img_home"
+                    android:src="@drawable/sprints_training"
                     />
 
                 <TextView
@@ -107,8 +108,8 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/img_home"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bajadas_training"
                     />
 
                 <TextView
@@ -139,7 +140,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/img_home"
+                    android:src="@drawable/resistencia_training"
                     />
 
                 <TextView
@@ -175,7 +176,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/img_home"
+                    android:src="@drawable/resistencia2_training"
                     />
 
                 <TextView
@@ -206,7 +207,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/img_home"
+                    android:src="@drawable/estiramientos_training"
                     />
 
                 <TextView
@@ -216,11 +217,24 @@
                     android:layout_gravity="bottom"
                     android:background="#8c000000"
                     android:gravity="center"
-                    android:text="@string/estirar"
+                    android:text="Estiramientos"
                     android:textColor="#ffe3e3e3"
-                    android:textSize="30sp"
+                    android:textSize="26sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </LinearLayout>
-</ScrollView>
+
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--        <androidx.fragment.app.FragmentContainerView-->
+<!--            android:id="@+id/frameLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:name="com.example.runimprove.SprintsFragment" />-->
+<!--    </FrameLayout>-->
+
+
+
+</RelativeLayout>

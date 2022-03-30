@@ -5,25 +5,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.runimprove.databinding.FragmentSprintsBinding
+import com.example.runimprove.databinding.FragmentHitBinding
 
 
-class SprintsFragment : Fragment() {
+class HitFragment : Fragment() {
 
-    private lateinit var mBinding : FragmentSprintsBinding
+    private lateinit var mBinding : FragmentHitBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        mBinding = FragmentSprintsBinding.inflate(inflater,container,false)
+        mBinding = FragmentHitBinding.inflate(inflater,container,false)
         return mBinding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val activity = activity as? TrainingActivity
         //activity?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        activity?.supportActionBar?.title = "Entrenar Sprints"
+        activity?.supportActionBar?.title = "Entrenar Hit"
     }
 
     override fun onDestroy() {

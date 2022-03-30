@@ -6,15 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.runimprove.databinding.FragmentSprintsBinding
+import com.example.runimprove.databinding.FragmentTecnicaBinding
 
+class TecnicaFragment : Fragment() {
 
-class SprintsFragment : Fragment() {
-
-    private lateinit var mBinding : FragmentSprintsBinding
+    private lateinit var mBinding : FragmentTecnicaBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        mBinding = FragmentSprintsBinding.inflate(inflater,container,false)
+        mBinding = FragmentTecnicaBinding.inflate(inflater,container,false)
         return mBinding.root
     }
 
@@ -23,7 +23,7 @@ class SprintsFragment : Fragment() {
 
         val activity = activity as? TrainingActivity
         //activity?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        activity?.supportActionBar?.title = "Entrenar Sprints"
+        activity?.supportActionBar?.title = "Entrenar Técnica"
     }
 
     override fun onDestroy() {

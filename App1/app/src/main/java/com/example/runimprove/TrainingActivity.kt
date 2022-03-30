@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.runimprove.databinding.ActivityTrainingBinding
 
@@ -23,13 +24,34 @@ class TrainingActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true);
 
         binding.cardSprint.setOnClickListener {
-            launchFragment()
+            val fragment = SprintsFragment()
+            launchFragment(fragment)
+        }
+        binding.cardBajadas.setOnClickListener {
+            val fragment = BajadasFragment()
+            launchFragment(fragment)
+        }
+        binding.cardHit.setOnClickListener {
+            val fragment = HitFragment()
+            launchFragment(fragment)
+        }
+        binding.cardResistencia.setOnClickListener {
+            val fragment = ResistenciaFragment()
+            launchFragment(fragment)
+        }
+        binding.cardTecnica.setOnClickListener {
+            val fragment = TecnicaFragment()
+            launchFragment(fragment)
+        }
+        binding.cardEstiramientos.setOnClickListener {
+            val fragment = EstiramientosFragment()
+            launchFragment(fragment)
         }
 
     }
 
-    private fun launchFragment() {
-        val fragment = SprintsFragment()
+    private fun launchFragment(fragment: Fragment) {
+        //val fragment = SprintsFragment()
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()

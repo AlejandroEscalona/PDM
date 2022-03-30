@@ -23,7 +23,7 @@ class EstiramientosFragment : Fragment() {
 
         val activity = activity as? TrainingActivity
         //activity?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        activity?.supportActionBar?.title = "Entrenar Sprints"
+        activity?.supportActionBar?.title = "Hacer Estiramientos"
     }
 
     override fun onDestroy() {

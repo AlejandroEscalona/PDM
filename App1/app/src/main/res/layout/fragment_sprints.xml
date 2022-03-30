@@ -18,11 +18,14 @@
             android:gravity="center"
             android:textSize="32dp"/>
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/twEnalce"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Primer ejercicio"
+            android:text="@string/messageWithLink"
             android:gravity="center"
             android:textSize="32dp"/>
+
+
 
     </LinearLayout>
 

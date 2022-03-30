@@ -1,10 +1,12 @@
 package com.example.runimprove
 
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.runimprove.databinding.FragmentSprintsBinding
 
 
@@ -24,6 +26,9 @@ class SprintsFragment : Fragment() {
         val activity = activity as? TrainingActivity
         //activity?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         activity?.supportActionBar?.title = "Entrenar Sprints"
+
+        val enlace: TextView = mBinding.twEnalce
+        enlace.movementMethod = LinkMovementMethod.getInstance()
     }
 
     override fun onDestroy() {

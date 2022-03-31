@@ -9,7 +9,7 @@
     <string name="historial_de_entrenamientos">Historial de Entrenamientos</string>
     <string name="entrenar">Entrenar</string>
     <string name="estirar">Estirar</string>
-    <string name="messageWithLink"><a href="https://www.google.com/">Vas a abrir Google</a></string>
+    <string name="messageWithLink"><a href="https://www.google.com/">?</a></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -2,4 +2,5 @@
 <resources>
     <dimen name="text_size_training_16">16dp</dimen>
     <dimen name="size_title_activity">48sp</dimen>
+    <dimen name="margin_16dp">16dp</dimen>
 </resources>

@@ -45,6 +45,9 @@ class SprintsFragment : Fragment() {
                     val r= getRingtone(activity,notificacion)
                     r.play()
                     this.cancel()
+                    mBinding.btnPause.setOnClickListener{
+                        r.stop()
+                    }
                 }
             }.start()
         }

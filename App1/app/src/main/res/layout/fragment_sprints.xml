@@ -84,61 +84,43 @@
             android:textSize="28dp"
             android:layout_marginBottom="@dimen/margin_16dp"/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btnPause"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:src="@drawable/ic_pause"
-            android:elevation="32dp"
-            android:outlineAmbientShadowColor="@color/black"
-            android:backgroundTint="#84FFFF"
-
-            />
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/btnPause"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="end|bottom"-->
+<!--            android:src="@drawable/ic_pause"-->
+<!--            android:elevation="32dp"-->
+<!--            android:outlineAmbientShadowColor="@color/black"-->
+<!--            />-->
 
         <com.getbase.floatingactionbutton.FloatingActionsMenu
             android:id="@+id/menu_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom">
-<!--            android:layout_margin="@dimen/margenes_fab"-->
-<!--            app:fab_labelStyle="@style/Etiquetas">-->
-        <!--    fab:fab_addButtonColorNormal="?attr/colorPrimary"
-            fab:fab_addButtonSize="normal"
-            fab:fab_labelStyle="@style/Etiquetas"
-            fab:fab_labelsPosition="left">-->
+            android:layout_gravity="end|bottom"
+            android:layout_marginTop="@dimen/margin_16dp"
+            app:fab_labelStyle="@color/color_titulos"
+            >
+
 
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:id="@+id/accion_favorito"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_pause"/>
-<!--                fab:fab_colorNormal="?attr/colorAccent"-->
-<!--                fab:fab_icon="@drawable/ic_favorito"-->
-<!--                fab:fab_size="mini"-->
-<!--                fab:fab_title="Favorito" />-->
+                app:fab_labelStyle="@color/color_titulos"
+                app:fab_icon="@drawable/ic_stop_alarm"
+                app:fab_title="Stop Alarma"/>
+
 
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/accion_buscar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-<!--                fab:fab_colorNormal="?attr/colorAccent"-->
-<!--                fab:fab_icon="@drawable/ic_buscar"-->
-<!--                fab:fab_size="mini"-->
-<!--                fab:fab_title="Buscar" />-->
-
-            <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/accion_carrito"
+                android:id="@+id/btnPause"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_play"/>
-<!--                fab:fab_colorNormal="?attr/colorAccent"-->
-<!--                fab:fab_icon="@drawable/ic_carro_compra"-->
-<!--                fab:fab_size="mini"-->
-<!--                fab:fab_title="Añadir a la cesta" />-->
+                app:fab_icon="@drawable/ic_pause"
+                app:fab_title="Stop Cronometro"/>
 
         </com.getbase.floatingactionbutton.FloatingActionsMenu>
-
 
     </LinearLayout>
 

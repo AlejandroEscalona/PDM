@@ -101,15 +101,19 @@
             android:layout_gravity="end|bottom"
             android:layout_marginTop="@dimen/margin_16dp"
             app:fab_labelStyle="@color/color_titulos"
+            android:backgroundTint="#689F38"
+            app:fab_addButtonColorNormal="#689F38"
             >
 
 
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/accion_favorito"
+                android:id="@+id/btnStopMusic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:fab_labelStyle="@color/color_titulos"
                 app:fab_icon="@drawable/ic_stop_alarm"
+                app:fab_colorNormal="#FB8C00"
+                app:fab_colorPressed="#DD2C00"
                 app:fab_title="Stop Alarma"/>
 
 
@@ -118,6 +122,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:fab_icon="@drawable/ic_pause"
+                app:fab_colorNormal="#00BCD4"
+                app:fab_colorPressed="#DD2C00"
                 app:fab_title="Stop Cronometro"/>
 
         </com.getbase.floatingactionbutton.FloatingActionsMenu>

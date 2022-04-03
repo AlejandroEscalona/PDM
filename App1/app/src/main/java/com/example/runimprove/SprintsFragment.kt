@@ -39,13 +39,17 @@ class SprintsFragment : Fragment() {
             object : CountDownTimer(10000, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
                     mBinding.tvCuentaAtras.setText("Segundos Restantes: " + millisUntilFinished / 1000)
+                    mBinding.btnPause.setOnClickListener{
+                        mBinding.tvCuentaAtras.setText("")
+                        cancel()
+                    }
                 }
                 override fun onFinish() {
                     val notificacion=RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
                     val r= getRingtone(activity,notificacion)
                     r.play()
                     this.cancel()
-                    mBinding.btnPause.setOnClickListener{
+                    mBinding.btnStopMusic.setOnClickListener{
                         r.stop()
                     }
                 }

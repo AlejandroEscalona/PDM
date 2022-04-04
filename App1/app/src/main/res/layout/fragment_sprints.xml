@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,9 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        tools:ignore="MissingConstraints">
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Entenamiento de Sprints"
@@ -22,17 +23,17 @@
             android:textSize="32dp"
             android:layout_marginBottom="@dimen/margin_16dp"
             android:textColor="@color/color_titulos"/>
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Calentamiento"
             android:textSize="28dp"
             android:layout_marginBottom="@dimen/margin_16dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="@dimen/margin_16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/margin_16dp">
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -49,21 +50,6 @@
                 android:onClick="play"
                 android:backgroundTint="@color/white"
                 />
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/twEnalce"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/messageWithLink"
-            android:gravity="center"
-            android:textColorLink="#D81B60"
-            android:textSize="20dp"/>
-    </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/margin_16dp">
-
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvCuentaAtras"
                 android:layout_width="match_parent"
@@ -73,9 +59,9 @@
                 android:gravity="center"
                 android:textSize="28sp"
                 />
-
-
         </LinearLayout>
+
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
@@ -84,53 +70,123 @@
             android:textSize="28dp"
             android:layout_marginBottom="@dimen/margin_16dp"/>
 
-<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--            android:id="@+id/btnPause"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="end|bottom"-->
-<!--            android:src="@drawable/ic_pause"-->
-<!--            android:elevation="32dp"-->
-<!--            android:outlineAmbientShadowColor="@color/black"-->
-<!--            />-->
-
-        <com.getbase.floatingactionbutton.FloatingActionsMenu
-            android:id="@+id/menu_fab"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:layout_marginTop="@dimen/margin_16dp"
-            app:fab_labelStyle="@color/color_titulos"
-            android:backgroundTint="#689F38"
-            app:fab_addButtonColorNormal="#689F38"
-            >
-
-
-            <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btnStopMusic"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/margin_16dp">
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:fab_labelStyle="@color/color_titulos"
-                app:fab_icon="@drawable/ic_stop_alarm"
-                app:fab_colorNormal="#FB8C00"
-                app:fab_colorPressed="#DD2C00"
-                app:fab_title="Stop Alarma"/>
-
-
-            <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btnPause"
+                android:text="Sprints 70m x 5"
+                android:textSize="20dp"
+                android:layout_marginBottom="8dp"
+                />
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_play"
+                android:id="@+id/btnPlay2"
+                android:layout_marginStart="40dp"
+                android:onClick="play"
+                android:backgroundTint="@color/white"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCuentaAtras2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text=""
+                android:gravity="center"
+                android:textSize="28sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/margin_16dp">
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:fab_icon="@drawable/ic_pause"
-                app:fab_colorNormal="#00BCD4"
-                app:fab_colorPressed="#DD2C00"
-                app:fab_title="Stop Cronometro"/>
+                android:text="Series 200m x 3"
+                android:textSize="20dp"
+                android:layout_marginBottom="8dp"
+                />
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_play"
+                android:layout_marginStart="40dp"
+                android:onClick="play"
+                android:backgroundTint="@color/white"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCuentaAtras3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text=""
+                android:gravity="center"
+                android:textSize="28sp"
+                />
+        </LinearLayout>
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginBottom="@dimen/margin_16dp">-->
 
-        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/tvCuentaAtras2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="12dp"-->
+<!--                android:text=""-->
+<!--                android:gravity="center"-->
+<!--                android:textSize="28sp"-->
+<!--                />-->
+
+<!--        </LinearLayout>-->
+
+
 
     </LinearLayout>
 
 
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/menu_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:backgroundTint="#689F38"
+        app:fab_addButtonColorNormal="#689F38"
+        app:fab_labelStyle="@color/color_titulos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnStopMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#FB8C00"
+            app:fab_colorPressed="#DD2C00"
+            app:fab_icon="@drawable/ic_stop_alarm"
+            app:fab_labelStyle="@color/color_titulos"
+            app:backgroundTint="@color/white"
+            app:fab_title="Stop Alarma" />
 
-</androidx.core.widget.NestedScrollView>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#00BCD4"
+            app:fab_colorPressed="#DD2C00"
+            app:fab_icon="@drawable/ic_pause"
+            app:backgroundTint="@color/white"
+            app:fab_title="Stop Cronometro" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,246 +8,294 @@
     android:background="@color/white"
     tools:context=".SprintsFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Entenamiento de Sprints"
-            android:gravity="center"
-            android:textSize="32dp"
-            android:layout_marginBottom="@dimen/margin_16dp"
-            android:textColor="@color/color_titulos"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Calentamiento"
-            android:textSize="28dp"
-            android:textColor="@color/color_titulos"
-            android:layout_marginBottom="@dimen/margin_16dp"/>
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Jumping Jacks x 20"
-                android:textSize="20sp" />
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/btnPlay"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:adjustViewBounds="true"
-                android:backgroundTint="@color/white"
-                android:cropToPadding="false"
-                android:onClick="play"
-                android:src="@drawable/ic_play" />
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvCuentaAtras"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:text=""
+                android:layout_marginBottom="@dimen/margin_16dp"
                 android:gravity="center"
-                android:textSize="28sp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <CheckBox android:id="@+id/jumping_serie1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1 serie"
-                android:layout_marginEnd="8dp"
-                android:onClick="onCheckboxClicked"/>
-            <CheckBox android:id="@+id/jumping_serie2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="2 serie"
-                android:onClick="onCheckboxClicked"/>
-            <CheckBox android:id="@+id/jumping_serie3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTintMode="add"
-                android:text="3 serie"
-                android:layout_marginEnd="8dp"
-                android:onClick="onCheckboxClicked"/>
-            <CheckBox android:id="@+id/jumping_serie4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="4 serie"
-                android:onClick="onCheckboxClicked"/>
-        </LinearLayout>
+                android:text="Entenamiento de Sprints"
+                android:textColor="@color/color_titulos"
+                android:textSize="32dp" />
 
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Entrenamiento"
-            android:textSize="28dp"
-            android:textColor="@color/color_titulos"
-            android:layout_marginBottom="@dimen/margin_16dp"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/margin_16dp">
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sprints 70m"
-                android:textSize="20dp"
-                android:layout_marginBottom="8dp"
-                />
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_play"
-                android:id="@+id/btnPlay2"
-                android:layout_marginStart="40dp"
-                android:onClick="play"
-                android:backgroundTint="@color/white"
-                />
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvCuentaAtras2"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:text=""
-                android:gravity="center"
-                android:textSize="28sp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal">
-            <CheckBox android:id="@+id/sprint_serie1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1 serie"
-                android:layout_marginEnd="8dp"
-                android:onClick="onCheckboxClicked"/>
-            <CheckBox android:id="@+id/sprint_serie2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="2 serie"
-                android:onClick="onCheckboxClicked"/>
-            <CheckBox android:id="@+id/sprint_serie3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3 serie"
-                android:layout_marginEnd="8dp"
-                android:onClick="onCheckboxClicked"/>
-            <CheckBox android:id="@+id/sprint_serie4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="4 serie"
-                android:onClick="onCheckboxClicked"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/margin_16dp">
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Series 200m"
-                android:textSize="20dp"
-                android:layout_marginBottom="8dp"
-                />
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/btnPlay3"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_play"
-                android:layout_marginStart="40dp"
-                android:onClick="play"
-                android:backgroundTint="@color/white"
-                />
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvCuentaAtras3"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:text="Calentamiento"
+                android:textColor="@color/color_titulos"
+                android:textSize="28dp" />
+            <!--    <ScrollView-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="match_parent"-->
+            <!--        android:scrollbars="none">-->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:text=""
-                android:gravity="center"
-                android:textSize="28sp"
-                />
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jumping Jacks x 20"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnPlay"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:adjustViewBounds="true"
+                    android:backgroundTint="@color/white"
+                    android:cropToPadding="false"
+                    android:onClick="play"
+                    android:src="@drawable/ic_play" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCuentaAtras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/jumping_serie1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="onCheckboxClicked"
+                    android:text="1 serie" />
+
+                <CheckBox
+                    android:id="@+id/jumping_serie2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="onCheckboxClicked"
+                    android:text="2 serie" />
+
+                <CheckBox
+                    android:id="@+id/jumping_serie3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTintMode="add"
+                    android:onClick="onCheckboxClicked"
+                    android:text="3 serie" />
+
+                <CheckBox
+                    android:id="@+id/jumping_serie4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="onCheckboxClicked"
+                    android:text="4 serie" />
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:text="Entrenamiento"
+                android:textColor="@color/color_titulos"
+                android:textSize="28dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Sprints 70m"
+                    android:textSize="20dp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnPlay2"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="40dp"
+                    android:backgroundTint="@color/white"
+                    android:onClick="play"
+                    android:src="@drawable/ic_play" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCuentaAtras2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/sprint_serie1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="onCheckboxClicked"
+                    android:text="1 serie" />
+
+                <CheckBox
+                    android:id="@+id/sprint_serie2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="onCheckboxClicked"
+                    android:text="2 serie" />
+
+                <CheckBox
+                    android:id="@+id/sprint_serie3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="onCheckboxClicked"
+                    android:text="3 serie" />
+
+                <CheckBox
+                    android:id="@+id/sprint_serie4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="onCheckboxClicked"
+                    android:text="4 serie" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Series 200m"
+                    android:textSize="20dp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnPlay3"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="40dp"
+                    android:backgroundTint="@color/white"
+                    android:onClick="play"
+                    android:src="@drawable/ic_play" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCuentaAtras3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/series_serie1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="onCheckboxClicked"
+                    android:text="1 serie" />
+
+                <CheckBox
+                    android:id="@+id/series_serie2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="onCheckboxClicked"
+                    android:text="2 serie" />
+
+                <CheckBox
+                    android:id="@+id/series_serie3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="onCheckboxClicked"
+                    android:text="3 serie" />
+
+                <CheckBox
+                    android:id="@+id/series_serie4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="onCheckboxClicked"
+                    android:text="4 serie" />
+            </LinearLayout>
+
+            <!--    </ScrollView>-->
+            <!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
+            <!--        <LinearLayout-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:orientation="horizontal"-->
+            <!--            android:layout_marginBottom="@dimen/margin_16dp">-->
+
+
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:id="@+id/tvCuentaAtras2"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="12dp"-->
+            <!--                android:text=""-->
+            <!--                android:gravity="center"-->
+            <!--                android:textSize="28sp"-->
+            <!--                />-->
+
+            <!--        </LinearLayout>-->
+
+
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <CheckBox android:id="@+id/series_serie1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1 serie"
-                android:layout_marginEnd="8dp"
-                android:onClick="onCheckboxClicked"/>
-            <CheckBox android:id="@+id/series_serie2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="2 serie"
-                android:onClick="onCheckboxClicked"/>
-            <CheckBox android:id="@+id/series_serie3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3 serie"
-                android:layout_marginEnd="8dp"
-                android:onClick="onCheckboxClicked"/>
-            <CheckBox android:id="@+id/series_serie4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="4 serie"
-                android:onClick="onCheckboxClicked"/>
-        </LinearLayout>
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:layout_marginBottom="@dimen/margin_16dp">-->
-
-
-<!--            <androidx.appcompat.widget.AppCompatTextView-->
-<!--                android:id="@+id/tvCuentaAtras2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="12dp"-->
-<!--                android:text=""-->
-<!--                android:gravity="center"-->
-<!--                android:textSize="28sp"-->
-<!--                />-->
-
-<!--        </LinearLayout>-->
-
-
-
-    </LinearLayout>
-
+    </ScrollView>
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/menu_fab"
@@ -280,21 +328,23 @@
             app:fab_icon="@drawable/ic_pause"
             app:backgroundTint="@color/white"
              />
-<!--app:fab_title="Stop Cronometro"
-app:fab_title="Stop Alarma"-->
+
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
     <Button
+        android:id="@+id/button2"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="@dimen/margin_8dp"
         android:padding="12dp"
         android:text="@string/guardar"
         app:icon="@drawable/ic_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/verde_tema"
-        app:strokeWidth="2dp"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-        android:layout_marginBottom="@dimen/margin_8dp"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:strokeWidth="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

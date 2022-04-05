@@ -1,5 +1,6 @@
 package com.example.runimprove
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorManager
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import androidx.core.content.ContextCompat.getSystemService
@@ -50,7 +52,8 @@ class SprintsFragment : Fragment() {
 
 
         mBinding.btnPlay.setOnClickListener {
-                object : CountDownTimer(10000, 1000) {
+                object : CountDownTimer(20000, 1000) {
+                    @SuppressLint("SetTextI18n")
                     override fun onTick(millisUntilFinished: Long) {
                         mBinding.tvCuentaAtras.setText("" + millisUntilFinished / 1000)
                         mBinding.btnPause.setOnClickListener {
@@ -74,6 +77,7 @@ class SprintsFragment : Fragment() {
 
             mBinding.btnPlay2.setOnClickListener {
                 object : CountDownTimer(120000, 1000) {
+                    @SuppressLint("SetTextI18n")
                     override fun onTick(millisUntilFinished: Long) {
                         mBinding.tvCuentaAtras2.setText("" + millisUntilFinished / 1000)
                         mBinding.btnPause.setOnClickListener {
@@ -95,6 +99,30 @@ class SprintsFragment : Fragment() {
                 }.start()
             }
 
+        mBinding.btnPlay3.setOnClickListener {
+            object : CountDownTimer(120000, 1000) {
+                @SuppressLint("SetTextI18n")
+                override fun onTick(millisUntilFinished: Long) {
+                    mBinding.tvCuentaAtras3.setText("" + millisUntilFinished / 1000)
+                    mBinding.btnPause.setOnClickListener {
+                        mBinding.tvCuentaAtras3.setText("")
+                        cancel()
+                    }
+                }
+
+                override fun onFinish() {
+                    val notificacion =
+                        RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
+                    val r = getRingtone(activity, notificacion)
+                    r.play()
+                    this.cancel()
+                    mBinding.btnStopMusic.setOnClickListener {
+                        r.stop()
+                    }
+                }
+            }.start()
+        }
+
 
     }
 
@@ -106,27 +134,6 @@ class SprintsFragment : Fragment() {
 
 
 
-    fun play(view: View){
-//        var txtTiempo=mBinding.tvCuentaAtras.text.toString().toLong()
-//        var tvCuentaAtras=mBinding.tvCuentaAtras
-//        var tiempoSegundos= txtTiempo.toString().toLong()
-//        var tiempoMilisegundos=tiempoSegundos*1000
-//        object : CountDownTimer(tiempoMilisegundos,1000){
-//            override fun onFinish() {
-//                val notificacion=RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
-//                val r= getRingtone(activity,notificacion)
-//                r.play()
-//                this.cancel()
-//            }
-//            override fun onTick(millisUntilFinished: Long) {
-//                //val tiempoSegundos=(millisUntilFinished/1000).toInt()+1
-//                tvCuentaAtras?.text="0"
-//            }
-//        }.start()
-
-
-
-    }
 
 
 }

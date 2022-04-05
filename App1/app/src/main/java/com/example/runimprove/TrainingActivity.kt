@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
+import android.widget.CheckBox
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
@@ -65,6 +67,91 @@ class TrainingActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return false
+    }
+
+    fun onCheckboxClicked(view: View) {
+        if (view is CheckBox) {
+            val checked: Boolean = view.isChecked
+
+            when (view.id) {
+                com.example.runimprove.R.id.sprint_serie1 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // Remove the meat
+                    }
+                }
+                com.example.runimprove.R.id.sprint_serie2 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // I'm lactose intolerant
+                    }
+                }
+                com.example.runimprove.R.id.sprint_serie3 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // I'm lactose intolerant
+                    }
+                }com.example.runimprove.R.id.sprint_serie4 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Vamos, a por el siguiente ejercicio", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // I'm lactose intolerant
+                    }
+                }com.example.runimprove.R.id.jumping_serie1 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // I'm lactose intolerant
+                    }
+                }com.example.runimprove.R.id.jumping_serie2 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // I'm lactose intolerant
+                    }
+                }com.example.runimprove.R.id.jumping_serie3 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // I'm lactose intolerant
+                    }
+                }com.example.runimprove.R.id.jumping_serie4 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // I'm lactose intolerant
+                    }
+                }com.example.runimprove.R.id.series_serie1 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // I'm lactose intolerant
+                    }
+                }com.example.runimprove.R.id.series_serie2 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // I'm lactose intolerant
+                    }
+                }com.example.runimprove.R.id.series_serie3 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Vamos ya casi acabas", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // I'm lactose intolerant
+                    }
+                }com.example.runimprove.R.id.series_serie4 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // I'm lactose intolerant
+                    }
+                }
+
+            }
+        }
     }
 
 

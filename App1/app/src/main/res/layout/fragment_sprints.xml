@@ -12,6 +12,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingBottom="32dp"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:fadeScrollbars="false"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

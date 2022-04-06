@@ -331,6 +331,7 @@
         android:layout_marginBottom="@dimen/margin_8dp"
         android:padding="12dp"
         android:text="@string/guardar"
+        android:onClick="onSaveClicked"
         app:icon="@drawable/ic_save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

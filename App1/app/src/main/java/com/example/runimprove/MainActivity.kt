@@ -10,12 +10,14 @@ import com.example.runimprove.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var database: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        database = DatabaseHelper(this)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             R.id.cardTraining -> {
                 val intent = Intent(this,TrainingActivity::class.java)
                 launchIntent(intent)
+
             }
             R.id.cardHistorial -> {
                 val intent = Intent(this,HistoricalActivity::class.java)

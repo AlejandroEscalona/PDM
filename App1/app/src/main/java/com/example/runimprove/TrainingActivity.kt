@@ -3,24 +3,26 @@ package com.example.runimprove
 import android.os.Bundle
 import android.view.View
 import android.widget.CheckBox
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.runimprove.databinding.ActivityTrainingBinding
+import java.time.LocalDateTime.now
 
 
 class TrainingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityTrainingBinding
-    var porcentajeEntreno = 0
+    var porcentajeEntreno = 0.0
+    private lateinit var database: DatabaseHelper
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTrainingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        database = DatabaseHelper(this)
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true);
 
@@ -68,7 +70,8 @@ class TrainingActivity : AppCompatActivity() {
     }
 
     fun onSaveClicked(view: View){
-        var completado = porcentajeEntreno / 12
+        var completado = porcentajeEntreno / 12.0
+        database.insertEntreno("Sprints",completado,now().toString())
     }
 
 

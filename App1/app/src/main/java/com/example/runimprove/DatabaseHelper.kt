@@ -1,10 +1,10 @@
 package com.example.runimprove
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import java.sql.Date
 
 class DatabaseHelper(context: Context) : SQLiteOpenHelper
     (context, Constants.DATABASE_NAME, null, Constants.DATABASE_VERSION) {
@@ -22,6 +22,30 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
 
     }
 
+    @SuppressLint("Range")
+    fun getAllEntrenos(): MutableList<Entreno>{
+        val entrenos : MutableList<Entreno> = mutableListOf()
+
+        val database = this.readableDatabase
+        val query = "SELECT * FROM ${Constants.ENTRENOS}"
+
+        val result = database.rawQuery(query,null)
+
+        if(result.moveToFirst()){
+            do {
+                val entreno = Entreno()
+                entreno.id = result.getLong(result.getColumnIndex(Constants.PROPERTY_ID))
+                entreno.tipo = result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO))
+                entreno.porcentaje = result.getDouble(result.getColumnIndex(Constants.PROPERTY_PORCENTAJE))
+                entreno.fecha = result.getString(result.getColumnIndex(Constants.PROPERTY_DATE))
+
+                entrenos.add(entreno)
+            }while (result.moveToNext())
+        }
+
+        return entrenos
+    }
+
     fun insertEntreno(tipo: String, porcentaje: Double, fecha: String) : Long{
         val database = this.writableDatabase
         val contentValues = ContentValues().apply {
@@ -33,4 +57,13 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
         val resultId = database.insert(Constants.ENTRENOS,null,contentValues)
         return resultId
     }
+
+    fun deleteEntreno(entreno : Entreno): Boolean{
+        val database = this.writableDatabase
+        val result = database.delete(Constants.ENTRENOS,
+            "${Constants.PROPERTY_ID} = ${entreno.id}",null)
+
+        return result == 1
+    }
+
 }

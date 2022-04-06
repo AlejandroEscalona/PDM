@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.runimprove.databinding.ActivityTrainingBinding
+import com.google.android.material.snackbar.Snackbar
 import java.time.LocalDateTime.now
 
 
@@ -71,7 +72,12 @@ class TrainingActivity : AppCompatActivity() {
 
     fun onSaveClicked(view: View){
         var completado = porcentajeEntreno / 12.0
-        database.insertEntreno("Sprints",completado,now().toString())
+        val id = database.insertEntreno("Sprints",completado,now().toString())
+        if(id != -1L ){
+            Snackbar.make(binding.root, "Guardado con exito.", Snackbar.LENGTH_SHORT).show()
+        } else{
+            Snackbar.make(binding.root, "Error al guardar.", Snackbar.LENGTH_SHORT).show()
+        }
     }
 
 
@@ -89,7 +95,6 @@ class TrainingActivity : AppCompatActivity() {
                 }
                 com.example.runimprove.R.id.sprint_serie2 -> {
                     if (checked) {
-                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {
@@ -98,7 +103,6 @@ class TrainingActivity : AppCompatActivity() {
                 }
                 com.example.runimprove.R.id.sprint_serie3 -> {
                     if (checked) {
-                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {
@@ -115,7 +119,6 @@ class TrainingActivity : AppCompatActivity() {
                     }
                 }com.example.runimprove.R.id.jumping_serie1 -> {
                     if (checked) {
-                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {
@@ -131,7 +134,6 @@ class TrainingActivity : AppCompatActivity() {
                     }
                 }com.example.runimprove.R.id.jumping_serie3 -> {
                     if (checked) {
-                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {
@@ -147,7 +149,6 @@ class TrainingActivity : AppCompatActivity() {
                     }
                 }com.example.runimprove.R.id.series_serie1 -> {
                     if (checked) {
-                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {
@@ -155,7 +156,6 @@ class TrainingActivity : AppCompatActivity() {
                     }
                 }com.example.runimprove.R.id.series_serie2 -> {
                     if (checked) {
-                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {
@@ -171,7 +171,7 @@ class TrainingActivity : AppCompatActivity() {
                     }
                 }com.example.runimprove.R.id.series_serie4 -> {
                     if (checked) {
-                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Muy bien, has acabado!!", Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {

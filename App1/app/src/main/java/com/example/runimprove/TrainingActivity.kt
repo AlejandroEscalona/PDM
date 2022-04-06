@@ -14,6 +14,7 @@ import com.example.runimprove.databinding.ActivityTrainingBinding
 class TrainingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityTrainingBinding
+    var porcentajeEntreno = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,87 +67,114 @@ class TrainingActivity : AppCompatActivity() {
         return false
     }
 
+    fun onSaveClicked(view: View){
+        var completado = porcentajeEntreno / 12
+    }
+
+
     fun onCheckboxClicked(view: View) {
         if (view is CheckBox) {
             val checked: Boolean = view.isChecked
-
             when (view.id) {
                 com.example.runimprove.R.id.sprint_serie1 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
                     } else {
-                        // Remove the meat
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }
                 com.example.runimprove.R.id.sprint_serie2 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
                     } else {
-                        // I'm lactose intolerant
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }
                 com.example.runimprove.R.id.sprint_serie3 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
                     } else {
-                        // I'm lactose intolerant
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }com.example.runimprove.R.id.sprint_serie4 -> {
                     if (checked) {
-                        Toast.makeText(this, "Vamos, a por el siguiente ejercicio", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Vamos, a por el siguiente ejercicio",
+                            Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
                     } else {
-                        // I'm lactose intolerant
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }com.example.runimprove.R.id.jumping_serie1 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
                     } else {
-                        // I'm lactose intolerant
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }com.example.runimprove.R.id.jumping_serie2 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
                     } else {
-                        // I'm lactose intolerant
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }com.example.runimprove.R.id.jumping_serie3 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
                     } else {
-                        // I'm lactose intolerant
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }com.example.runimprove.R.id.jumping_serie4 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
                     } else {
-                        // I'm lactose intolerant
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }com.example.runimprove.R.id.series_serie1 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
                     } else {
-                        // I'm lactose intolerant
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }com.example.runimprove.R.id.series_serie2 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
                     } else {
-                        // I'm lactose intolerant
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }com.example.runimprove.R.id.series_serie3 -> {
                     if (checked) {
                         Toast.makeText(this, "Vamos ya casi acabas", Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
                     } else {
-                        // I'm lactose intolerant
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }com.example.runimprove.R.id.series_serie4 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
                     } else {
-                        // I'm lactose intolerant
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }
-
             }
         }
     }

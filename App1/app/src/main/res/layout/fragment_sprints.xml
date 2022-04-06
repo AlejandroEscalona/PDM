@@ -14,6 +14,7 @@
         android:paddingBottom="32dp"
         android:scrollbarThumbVertical="@drawable/scrollbar"
         android:fadeScrollbars="false"
+        android:scrollbarSize="7dp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +70,7 @@
                     android:backgroundTint="@color/white"
                     android:cropToPadding="false"
                     android:onClick="play"
-                    android:src="@drawable/ic_play" />
+                    android:src="@drawable/ic_timer" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvCuentaAtras"
@@ -92,34 +93,30 @@
                     android:id="@+id/jumping_serie1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:onClick="onCheckboxClicked"
-                    android:text="1 serie" />
+                    android:text="1ª serie" />
 
                 <CheckBox
                     android:id="@+id/jumping_serie2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:onClick="onCheckboxClicked"
-                    android:text="2 serie" />
+                    android:text="2ª serie" />
 
                 <CheckBox
                     android:id="@+id/jumping_serie3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:backgroundTintMode="add"
                     android:onClick="onCheckboxClicked"
-                    android:text="3 serie" />
+                    android:text="3ª serie" />
 
                 <CheckBox
                     android:id="@+id/jumping_serie4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:onClick="onCheckboxClicked"
-                    android:text="4 serie" />
+                    android:text="4ª serie" />
             </LinearLayout>
 
 
@@ -152,7 +149,7 @@
                     android:layout_marginStart="40dp"
                     android:backgroundTint="@color/white"
                     android:onClick="play"
-                    android:src="@drawable/ic_play" />
+                    android:src="@drawable/ic_timer" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvCuentaAtras2"
@@ -174,33 +171,29 @@
                     android:id="@+id/sprint_serie1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:onClick="onCheckboxClicked"
-                    android:text="1 serie" />
+                    android:text="1ª serie" />
 
                 <CheckBox
                     android:id="@+id/sprint_serie2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:onClick="onCheckboxClicked"
-                    android:text="2 serie" />
+                    android:text="2ª serie" />
 
                 <CheckBox
                     android:id="@+id/sprint_serie3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:onClick="onCheckboxClicked"
-                    android:text="3 serie" />
+                    android:text="3ª serie" />
 
                 <CheckBox
                     android:id="@+id/sprint_serie4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:onClick="onCheckboxClicked"
-                    android:text="4 serie" />
+                    android:text="4ª serie" />
             </LinearLayout>
 
             <LinearLayout
@@ -224,7 +217,7 @@
                     android:layout_marginStart="40dp"
                     android:backgroundTint="@color/white"
                     android:onClick="play"
-                    android:src="@drawable/ic_play" />
+                    android:src="@drawable/ic_timer" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvCuentaAtras3"
@@ -245,33 +238,29 @@
                     android:id="@+id/series_serie1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:onClick="onCheckboxClicked"
-                    android:text="1 serie" />
+                    android:text="1ª serie" />
 
                 <CheckBox
                     android:id="@+id/series_serie2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:onClick="onCheckboxClicked"
-                    android:text="2 serie" />
+                    android:text="2ª serie" />
 
                 <CheckBox
                     android:id="@+id/series_serie3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:onClick="onCheckboxClicked"
-                    android:text="3 serie" />
+                    android:text="3ª serie" />
 
                 <CheckBox
                     android:id="@+id/series_serie4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:onClick="onCheckboxClicked"
-                    android:text="4 serie" />
+                    android:text="4ª serie" />
             </LinearLayout>
 
             <!--    </ScrollView>-->

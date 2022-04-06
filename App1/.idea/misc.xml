@@ -22,6 +22,7 @@
         <entry key="app/src/main/res/layout/fragment_resistencia.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_sprints.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_tecnica.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/item_entreno.xml" value="0.534375" />
         <entry key="app/src/main/res/layout/test.xml" value="0.35625" />
       </map>
     </option>

@@ -17,4 +17,7 @@
     <string name="porcentaje">Porcentaje</string>
     <string name="fecha">Fecha</string>
     <string name="tipo">Tipo</string>
+    <string name="borrar_entreno">¿Quiere borrar el entreno?</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="eliminar">Eliminar</string>
 </resources>

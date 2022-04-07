@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.runimprove.databinding.ActivityTrainingBinding
 import com.google.android.material.snackbar.Snackbar
-import java.time.LocalDateTime.now
+import java.time.LocalDate.now
 
 
 class TrainingActivity : AppCompatActivity() {
@@ -26,6 +26,7 @@ class TrainingActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true);
+
 
         binding.cardSprint.setOnClickListener {
             val fragment = SprintsFragment()
@@ -51,7 +52,6 @@ class TrainingActivity : AppCompatActivity() {
             val fragment = EstiramientosFragment()
             launchFragment(fragment)
         }
-
     }
 
     private fun launchFragment(fragment: Fragment) {
@@ -71,7 +71,7 @@ class TrainingActivity : AppCompatActivity() {
     }
 
     fun onSaveClicked(view: View){
-        var completado = porcentajeEntreno / 12.0
+        var completado = ((porcentajeEntreno / 12.0)*100).toInt().toDouble()
         val id = database.insertEntreno("Sprints",completado,now().toString())
         if(id != -1L ){
             Snackbar.make(binding.root, "Guardado con exito.", Snackbar.LENGTH_SHORT).show()
@@ -85,7 +85,7 @@ class TrainingActivity : AppCompatActivity() {
         if (view is CheckBox) {
             val checked: Boolean = view.isChecked
             when (view.id) {
-                com.example.runimprove.R.id.sprint_serie1 -> {
+                R.id.sprint_serie1 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)
@@ -93,7 +93,7 @@ class TrainingActivity : AppCompatActivity() {
                         porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }
-                com.example.runimprove.R.id.sprint_serie2 -> {
+                R.id.sprint_serie2 -> {
                     if (checked) {
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
@@ -101,14 +101,14 @@ class TrainingActivity : AppCompatActivity() {
                         porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }
-                com.example.runimprove.R.id.sprint_serie3 -> {
+                R.id.sprint_serie3 -> {
                     if (checked) {
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {
                         porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
-                }com.example.runimprove.R.id.sprint_serie4 -> {
+                }R.id.sprint_serie4 -> {
                     if (checked) {
                         Toast.makeText(this, "Vamos, a por el siguiente ejercicio",
                             Toast.LENGTH_SHORT).show()
@@ -181,6 +181,7 @@ class TrainingActivity : AppCompatActivity() {
             }
         }
     }
+
 
 
 }

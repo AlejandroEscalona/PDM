@@ -46,7 +46,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
         return entrenos
     }
 
-    fun insertEntreno(tipo: String, porcentaje: Double, fecha: String) : Long{
+    fun insertEntreno( tipo: String, porcentaje: Double, fecha: String) : Long{
         val database = this.writableDatabase
         val contentValues = ContentValues().apply {
             put(Constants.PROPERTY_TIPO, tipo)
@@ -65,5 +65,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
 
         return result == 1
     }
+
 
 }

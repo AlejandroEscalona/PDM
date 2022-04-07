@@ -11,6 +11,13 @@ class EntrenoAdapter(var entrenoList: MutableList<Entreno>, private val listener
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val binding = ItemEntrenoBinding.bind(view)
+
+        fun setListener(entreno: Entreno){
+            binding.root.setOnLongClickListener{
+                listener.onLongClick(entreno)
+                true
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -20,11 +27,18 @@ class EntrenoAdapter(var entrenoList: MutableList<Entreno>, private val listener
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val entreno = entrenoList.get(position)
+        holder.setListener(entreno)
         holder.binding.tvTipo.text = entreno.tipo
         holder.binding.tvPorcentaje.text = entreno.porcentaje.toString()
         holder.binding.tvFecha.text = entreno.fecha
+
     }
 
     override fun getItemCount(): Int = entrenoList.size
+
+    fun remove(entreno: Entreno){
+        entrenoList.remove(entreno)
+        notifyDataSetChanged()
+    }
 
 }

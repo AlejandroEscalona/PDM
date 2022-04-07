@@ -2,8 +2,11 @@ package com.example.runimprove
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.runimprove.databinding.ActivityHistoricalBinding
+import com.google.android.material.snackbar.Snackbar
+import java.time.LocalTime.now
 
 class HistoricalActivity : AppCompatActivity(), OnClickListener {
 
@@ -17,17 +20,8 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
         binding = ActivityHistoricalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         database = DatabaseHelper(this)
-//        var entrenos = getEntrenos()
-        val entrenos = mutableListOf(
-            Entreno(1,"Sprints",56.2),
-            Entreno(2,"Resistencia",23.5),
-            Entreno(2,"Técnica",87.5)
-        )
-        entrenoAdapter = EntrenoAdapter(entrenos,this)
-        binding.recyclerViewEntrenos.apply {
-            layoutManager = LinearLayoutManager(this@HistoricalActivity)
-            adapter = entrenoAdapter
-        }
+        getEntrenos()
+
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true);
@@ -38,14 +32,30 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
         return false
     }
 
-    private fun getEntrenos(){
-        val data = database.getAllEntrenos()
-//        data.forEach { entreno ->
-//
-//        }
+     fun getEntrenos(){
+         val data = database.getAllEntrenos()
+         entrenoAdapter = EntrenoAdapter(data,this)
+            binding.recyclerViewEntrenos.apply {
+                layoutManager = LinearLayoutManager(this@HistoricalActivity)
+                adapter = entrenoAdapter
+            }
     }
 
+
     override fun onLongClick(entreno: Entreno) {
-        TODO("Not yet implemented")
+        val builder = AlertDialog.Builder(this)
+            .setTitle(getString(R.string.borrar_entreno))
+            .setPositiveButton(getString(R.string.eliminar)) { dialogInterface, i ->
+                if (database.deleteEntreno(entreno)) {
+                    entrenoAdapter.remove(entreno)
+                    Snackbar.make(binding.root, "Borrado con exito.", Snackbar.LENGTH_SHORT).show()
+                }else
+                    Snackbar.make(binding.root, "Error al borrar", Snackbar.LENGTH_SHORT).show()
+            }
+            .setNegativeButton(getString(R.string.cancelar),null)
+        builder.create().show()
     }
+
+
 }
+

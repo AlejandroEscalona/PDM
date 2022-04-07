@@ -13,7 +13,7 @@
         <entry key="app/src/main/res/drawable/image_home.xml" value="0.196" />
         <entry key="app/src/main/res/drawable/scrollbar.xml" value="0.1905" />
         <entry key="app/src/main/res/drawable/training_btn.xml" value="0.196" />
-        <entry key="app/src/main/res/layout/activity_historical.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/activity_historical.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_training.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_bajadas.xml" value="0.35625" />

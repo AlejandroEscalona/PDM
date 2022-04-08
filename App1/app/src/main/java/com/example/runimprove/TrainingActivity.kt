@@ -75,6 +75,9 @@ class TrainingActivity : AppCompatActivity() {
             R.id.btnSaveSprint -> tipo = "Sprints"
             R.id.btnSaveTecnica -> tipo = "Técnica"
             R.id.btnSaveEstiramientos -> tipo = "Estiramientos"
+            R.id.btnSaveBajadas -> tipo = "Bajadas"
+            R.id.btnSaveResistencia -> tipo = "Resistencia"
+            R.id.btnSaveHit -> tipo = "Hit"
         }
 
         var completado = ((porcentajeEntreno / 12.0)*100).toInt().toDouble()

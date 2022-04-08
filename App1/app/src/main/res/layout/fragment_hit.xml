@@ -1,29 +1,321 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".HitFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingBottom="32dp"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:fadeScrollbars="false"
+        android:scrollbarSize="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSaveHit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnSaveHit"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:gravity="center"
+                android:text="Entenamiento de
+                 Hit"
+                android:textColor="@color/color_titulos"
+                android:textSize="32dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:text="Calentamiento"
+                android:textColor="@color/color_titulos"
+                android:textSize="28dp" />
+            <!--    <ScrollView-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="match_parent"-->
+            <!--        android:scrollbars="none">-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jumping Jacks x 20"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnPlay"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:adjustViewBounds="true"
+                    android:backgroundTint="@color/white"
+                    android:cropToPadding="false"
+                    android:onClick="play"
+                    android:src="@drawable/ic_timer" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCuentaAtras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/calentamiento_serie1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="1ª serie" />
+
+                <CheckBox
+                    android:id="@+id/calentamiento_serie2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="2ª serie" />
+
+                <CheckBox
+                    android:id="@+id/calentamiento_serie3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTintMode="add"
+                    android:onClick="onCheckboxClicked"
+                    android:text="3ª serie" />
+
+                <CheckBox
+                    android:id="@+id/calentamiento_serie4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="4ª serie" />
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:text="Entrenamiento"
+                android:textColor="@color/color_titulos"
+                android:textSize="28dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Hit 50m"
+                    android:textSize="20dp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnPlay2"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/white"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:onClick="play"
+                    android:src="@drawable/ic_timer" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCuentaAtras2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/entrenamiento1_serie1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="1ª serie" />
+
+                <CheckBox
+                    android:id="@+id/entrenamiento1_serie2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="2ª serie" />
+
+                <CheckBox
+                    android:id="@+id/entrenamiento1_serie3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="3ª serie" />
+
+                <CheckBox
+                    android:id="@+id/entrenamiento1_serie4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="4ª serie" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Hiit 90m"
+                    android:textSize="20dp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnPlay3"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/white"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:onClick="play"
+                    android:src="@drawable/ic_timer" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCuentaAtras3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/entrenamiento2_serie1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="1ª serie" />
+
+                <CheckBox
+                    android:id="@+id/entrenamiento2_serie2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="2ª serie" />
+
+                <CheckBox
+                    android:id="@+id/entrenamiento2_serie3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="3ª serie" />
+
+                <CheckBox
+                    android:id="@+id/entrenamiento2_serie4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="4ª serie" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/menu_fab"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Calentamiento"
-            android:gravity="center"
-            android:textSize="32dp"/>
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Primer ejercicio"
-            android:gravity="center"
-            android:textSize="32dp"/>
+        android:layout_gravity="end|bottom"
+        android:backgroundTint="@color/verde_tema"
+        app:fab_addButtonColorNormal="#689F38"
+        app:fab_labelStyle="@color/color_titulos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    </LinearLayout>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnStopMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#FB8C00"
+            app:fab_colorPressed="#DD2C00"
+            app:fab_icon="@drawable/ic_stop_alarm"
+            app:fab_labelStyle="@color/color_titulos"
+            app:backgroundTint="@color/white"
+            />
 
-</androidx.core.widget.NestedScrollView>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#00BCD4"
+            app:fab_colorPressed="#DD2C00"
+            app:fab_icon="@drawable/ic_pause"
+            app:backgroundTint="@color/white"
+            />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    <Button
+        android:id="@+id/btnSaveHit"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="@dimen/margin_8dp"
+        android:padding="12dp"
+        android:text="@string/guardar"
+        android:onClick="onSaveClicked"
+        app:icon="@drawable/ic_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/verde_tema"
+        app:strokeWidth="2dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

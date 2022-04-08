@@ -74,6 +74,7 @@ class TrainingActivity : AppCompatActivity() {
         when(view.id){
             R.id.btnSaveSprint -> tipo = "Sprints"
             R.id.btnSaveTecnica -> tipo = "Técnica"
+            R.id.btnSaveEstiramientos -> tipo = "Estiramientos"
         }
 
         var completado = ((porcentajeEntreno / 12.0)*100).toInt().toDouble()
@@ -90,7 +91,7 @@ class TrainingActivity : AppCompatActivity() {
         if (view is CheckBox) {
             val checked: Boolean = view.isChecked
             when (view.id) {
-                R.id.sprint_serie1 -> {
+                R.id.entrenamiento1_serie1 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)
@@ -98,7 +99,7 @@ class TrainingActivity : AppCompatActivity() {
                         porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }
-                R.id.sprint_serie2 -> {
+                R.id.entrenamiento1_serie2 -> {
                     if (checked) {
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
@@ -106,14 +107,14 @@ class TrainingActivity : AppCompatActivity() {
                         porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
                 }
-                R.id.sprint_serie3 -> {
+                R.id.entrenamiento1_serie3 -> {
                     if (checked) {
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {
                         porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
-                }R.id.sprint_serie4 -> {
+                }R.id.entrenamiento1_serie4 -> {
                     if (checked) {
                         Toast.makeText(this, "Vamos, a por el siguiente ejercicio",
                             Toast.LENGTH_SHORT).show()
@@ -122,29 +123,14 @@ class TrainingActivity : AppCompatActivity() {
                     } else {
                         porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
-                }R.id.jumping_serie1 -> {
+                }R.id.calentamiento_serie1 -> {
                     if (checked) {
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {
                         porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
-                }R.id.jumping_serie2 -> {
-                    if (checked) {
-                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
-                        porcentajeEntreno = porcentajeEntreno.plus(1)
-
-                    } else {
-                        porcentajeEntreno = porcentajeEntreno.minus(1)
-                    }
-                }R.id.jumping_serie3 -> {
-                    if (checked) {
-                        porcentajeEntreno = porcentajeEntreno.plus(1)
-
-                    } else {
-                        porcentajeEntreno = porcentajeEntreno.minus(1)
-                    }
-                }R.id.jumping_serie4 -> {
+                }R.id.calentamiento_serie2 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)
@@ -152,21 +138,36 @@ class TrainingActivity : AppCompatActivity() {
                     } else {
                         porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
-                }R.id.series_serie1 -> {
+                }R.id.calentamiento_serie3 -> {
                     if (checked) {
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {
                         porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
-                }R.id.series_serie2 -> {
+                }R.id.calentamiento_serie4 -> {
+                    if (checked) {
+                        Toast.makeText(this, "Muy bien, sigue así!!", Toast.LENGTH_SHORT).show()
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
+                    } else {
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
+                    }
+                }R.id.entrenamiento2_serie1 -> {
                     if (checked) {
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {
                         porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
-                }R.id.series_serie3 -> {
+                }R.id.entrenamiento2_serie2 -> {
+                    if (checked) {
+                        porcentajeEntreno = porcentajeEntreno.plus(1)
+
+                    } else {
+                        porcentajeEntreno = porcentajeEntreno.minus(1)
+                    }
+                }R.id.entrenamiento2_serie3 -> {
                     if (checked) {
                         Toast.makeText(this, "Vamos ya casi acabas", Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)
@@ -174,7 +175,7 @@ class TrainingActivity : AppCompatActivity() {
                     } else {
                         porcentajeEntreno = porcentajeEntreno.minus(1)
                     }
-                }R.id.series_serie4 -> {
+                }R.id.entrenamiento2_serie4 -> {
                     if (checked) {
                         Toast.makeText(this, "Muy bien, has acabado!!", Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)

@@ -35,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:text="Porcentaje: "
+        android:layout_marginStart="-16dp"
         android:textAppearance="?attr/textAppearanceListItem"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

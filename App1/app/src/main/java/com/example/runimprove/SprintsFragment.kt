@@ -122,8 +122,6 @@ class SprintsFragment : Fragment() {
                 }
             }.start()
         }
-
-
     }
 
     override fun onDestroy() {
@@ -131,9 +129,5 @@ class SprintsFragment : Fragment() {
         activity?.supportActionBar?.title = "Entrenar"
         super.onDestroy()
     }
-
-
-
-
 
 }

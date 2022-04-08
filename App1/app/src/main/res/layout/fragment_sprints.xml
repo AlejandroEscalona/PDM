@@ -15,7 +15,7 @@
         android:scrollbarThumbVertical="@drawable/scrollbar"
         android:fadeScrollbars="false"
         android:scrollbarSize="7dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/btnSaveSprint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,7 +26,7 @@
             android:orientation="vertical"
             android:padding="16dp"
             android:paddingBottom="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toTopOf="@+id/btnSaveSprint"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
 
@@ -90,21 +90,21 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/jumping_serie1"
+                    android:id="@+id/calentamiento_serie1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
                     android:text="1ª serie" />
 
                 <CheckBox
-                    android:id="@+id/jumping_serie2"
+                    android:id="@+id/calentamiento_serie2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
                     android:text="2ª serie" />
 
                 <CheckBox
-                    android:id="@+id/jumping_serie3"
+                    android:id="@+id/calentamiento_serie3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTintMode="add"
@@ -112,7 +112,7 @@
                     android:text="3ª serie" />
 
                 <CheckBox
-                    android:id="@+id/jumping_serie4"
+                    android:id="@+id/calentamiento_serie4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
@@ -168,28 +168,28 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/sprint_serie1"
+                    android:id="@+id/entrenamiento1_serie1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
                     android:text="1ª serie" />
 
                 <CheckBox
-                    android:id="@+id/sprint_serie2"
+                    android:id="@+id/entrenamiento1_serie2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
                     android:text="2ª serie" />
 
                 <CheckBox
-                    android:id="@+id/sprint_serie3"
+                    android:id="@+id/entrenamiento1_serie3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
                     android:text="3ª serie" />
 
                 <CheckBox
-                    android:id="@+id/sprint_serie4"
+                    android:id="@+id/entrenamiento1_serie4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
@@ -235,28 +235,28 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/series_serie1"
+                    android:id="@+id/entrenamiento2_serie1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
                     android:text="1ª serie" />
 
                 <CheckBox
-                    android:id="@+id/series_serie2"
+                    android:id="@+id/entrenamiento2_serie2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
                     android:text="2ª serie" />
 
                 <CheckBox
-                    android:id="@+id/series_serie3"
+                    android:id="@+id/entrenamiento2_serie3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
                     android:text="3ª serie" />
 
                 <CheckBox
-                    android:id="@+id/series_serie4"
+                    android:id="@+id/entrenamiento2_serie4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
@@ -323,7 +323,7 @@
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnSaveSprint"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

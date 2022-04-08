@@ -19,7 +19,6 @@ class TecnicaFragment : Fragment() {
         savedInstanceState: Bundle?): View? {
         mBinding = FragmentTecnicaBinding.inflate(inflater,container,false)
         return mBinding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

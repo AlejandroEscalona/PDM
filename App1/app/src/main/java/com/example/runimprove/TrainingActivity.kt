@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.runimprove.databinding.ActivityTrainingBinding
 import com.google.android.material.snackbar.Snackbar
 import java.time.LocalDate.now
+import java.time.format.DateTimeFormatter
 
 
 class TrainingActivity : AppCompatActivity() {
@@ -30,26 +31,32 @@ class TrainingActivity : AppCompatActivity() {
 
         binding.cardSprint.setOnClickListener {
             val fragment = SprintsFragment()
+            porcentajeEntreno=0.0
             launchFragment(fragment)
         }
         binding.cardBajadas.setOnClickListener {
             val fragment = BajadasFragment()
+            porcentajeEntreno=0.0
             launchFragment(fragment)
         }
         binding.cardHit.setOnClickListener {
             val fragment = HitFragment()
+            porcentajeEntreno=0.0
             launchFragment(fragment)
         }
         binding.cardResistencia.setOnClickListener {
             val fragment = ResistenciaFragment()
+            porcentajeEntreno=0.0
             launchFragment(fragment)
         }
         binding.cardTecnica.setOnClickListener {
             val fragment = TecnicaFragment()
+            porcentajeEntreno=0.0
             launchFragment(fragment)
         }
         binding.cardEstiramientos.setOnClickListener {
             val fragment = EstiramientosFragment()
+            porcentajeEntreno=0.0
             launchFragment(fragment)
         }
     }
@@ -71,6 +78,7 @@ class TrainingActivity : AppCompatActivity() {
 
     fun onSaveClicked(view: View){
         var tipo = ""
+        //Obtenemos el tipo de entreno
         when(view.id){
             R.id.btnSaveSprint -> tipo = "Sprints"
             R.id.btnSaveTecnica -> tipo = "Técnica"
@@ -81,14 +89,17 @@ class TrainingActivity : AppCompatActivity() {
         }
 
         var completado = ((porcentajeEntreno / 12.0)*100).toInt().toDouble()
-        val id = database.insertEntreno(tipo,completado,now().toString())
+        if(completado == 0.0) Snackbar.make(binding.root, "Debes marcar alguna serie", Snackbar.LENGTH_SHORT).show()
+
+        val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+        //Insertamos entreno en la base de datos
+        val id = database.insertEntreno(tipo,completado,(now().format(formatter)).toString())
         if(id != -1L ){
             Snackbar.make(binding.root, "Guardado con exito.", Snackbar.LENGTH_SHORT).show()
         } else{
             Snackbar.make(binding.root, "Error al guardar.", Snackbar.LENGTH_SHORT).show()
         }
     }
-
 
     fun onCheckboxClicked(view: View) {
         if (view is CheckBox) {
@@ -190,7 +201,4 @@ class TrainingActivity : AppCompatActivity() {
             }
         }
     }
-
-
-
 }

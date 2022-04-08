@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_16dp"
                 android:gravity="center"
-                android:text="Entenamiento de Estiramientos"
+                android:text="@string/sesion_de_estiramientos"
                 android:textColor="@color/color_titulos"
                 android:textSize="32dp" />
 
@@ -43,13 +43,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_16dp"
-                android:text="Calentamiento"
+                android:text="@string/calentamiento"
                 android:textColor="@color/color_titulos"
                 android:textSize="28dp" />
-            <!--    <ScrollView-->
-            <!--        android:layout_width="match_parent"-->
-            <!--        android:layout_height="match_parent"-->
-            <!--        android:scrollbars="none">-->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

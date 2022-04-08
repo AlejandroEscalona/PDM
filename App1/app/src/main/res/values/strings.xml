@@ -20,4 +20,14 @@
     <string name="borrar_entreno">¿Quiere borrar el entreno?</string>
     <string name="cancelar">Cancelar</string>
     <string name="eliminar">Eliminar</string>
+    <string name="calentamiento">Calentamiento</string>
+    <string name="entrenamiento">Entrenamiento</string>
+    <string name="historial_de">Historial de</string>
+    <string name="entrenamientos">Entrenamientos</string>
+    <string name="sesion_de_estiramientos">Sesión de Estiramientos</string>
+    <string name="entenamiento_de_hit">Entenamiento de Hit</string>
+    <string name="entenamiento_de_sprints">Entenamiento de Sprints</string>
+    <string name="entenamiento_de_resistencia">Entenamiento de Resistencia</string>
+    <string name="entenamiento_de_tecnica">Entenamiento de Técnica</string>
+    <string name="entenamiento_de_bajadas">Entenamiento de Bajadas</string>
 </resources>

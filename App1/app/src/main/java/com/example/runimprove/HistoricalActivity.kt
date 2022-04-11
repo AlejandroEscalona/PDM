@@ -2,10 +2,13 @@ package com.example.runimprove
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.GridLayout
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.runimprove.databinding.ActivityHistoricalBinding
 import com.google.android.material.snackbar.Snackbar
+import java.security.AccessController.getContext
 import java.time.LocalTime.now
 
 class HistoricalActivity : AppCompatActivity(), OnClickListener {
@@ -21,6 +24,7 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
         setContentView(binding.root)
         database = DatabaseHelper(this)
         getEntrenos()
+        binding.recyclerViewEntrenos.setHasFixedSize(true)
 
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
@@ -30,6 +34,8 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
                 database.deleteAllEntreno()
                 entrenoAdapter.removeAll()
                 Snackbar.make(binding.root, getString(R.string.delete_all_entrenos), Snackbar.LENGTH_SHORT).show()
+        }
+        binding.btnGrafica.setOnClickListener(){
         }
     }
 

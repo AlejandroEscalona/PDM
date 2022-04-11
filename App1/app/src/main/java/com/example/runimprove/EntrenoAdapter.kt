@@ -1,6 +1,7 @@
 package com.example.runimprove
 
 import android.annotation.SuppressLint
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,5 +49,6 @@ class EntrenoAdapter(var entrenoList: MutableList<Entreno>, private val listener
         entrenoList.clear()
         notifyDataSetChanged()
     }
+
 
 }

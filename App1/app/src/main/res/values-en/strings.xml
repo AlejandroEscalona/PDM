@@ -38,5 +38,7 @@
     <string name="marcar_serie">You must mark some series</string>
     <string name="guardar_exito">Saved successfully.</string>
     <string name="error_guardar">Error al guardar.</string>
-
+    <string name="tipo_subrayado"><u>Type</u></string>
+    <string name="porcentaje_subrayado"><u>Percentage</u></string>
+    <string name="fecha_subrayado"><u>Date</u></string>
 </resources>

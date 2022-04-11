@@ -68,49 +68,48 @@
 
     </LinearLayout>
 
-    <com.getbase.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnGrafica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fab_colorNormal="#FF9800"
-        app:fab_colorPressed="#FFCC80"
-        app:fab_icon="@drawable/ic_barras"
-        app:backgroundTint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-<!--    <com.getbase.floatingactionbutton.FloatingActionsMenu-->
-<!--        android:id="@+id/menu_fab"-->
+<!--    <com.getbase.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/btnGrafica"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="end|bottom"-->
-<!--        android:backgroundTint="@color/verde_tema"-->
-<!--        app:fab_addButtonColorNormal="#689F38"-->
-<!--        app:fab_labelStyle="@color/color_titulos"-->
+<!--        app:fab_colorNormal="#FF9800"-->
+<!--        app:fab_colorPressed="#FFCC80"-->
+<!--        app:fab_icon="@drawable/ic_barras"-->
+<!--        app:backgroundTint="@color/black"-->
 <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent">-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        />-->
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/menu_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:backgroundTint="@color/verde_tema"
+        app:fab_addButtonColorNormal="#689F38"
+        app:fab_labelStyle="@color/color_titulos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-<!--        <com.getbase.floatingactionbutton.FloatingActionButton-->
-<!--            android:id="@+id/btnGrafica2"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:fab_colorNormal="#FB8C00"-->
-<!--            app:fab_colorPressed="#DD2C00"-->
-<!--            app:fab_icon="@drawable/ic_stop_alarm"-->
-<!--            app:fab_labelStyle="@color/color_titulos"-->
-<!--            app:backgroundTint="@color/white"-->
-<!--            />-->
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnGrafica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#FF9800"
+            app:fab_colorPressed="#FFCC80"
+            app:fab_icon="@drawable/ic_barras"
+            app:backgroundTint="@color/black"
+            />
 
-<!--        <com.getbase.floatingactionbutton.FloatingActionButton-->
-<!--            android:id="@+id/btnGrafica"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:fab_colorNormal="#00BCD4"-->
-<!--            app:fab_colorPressed="#DD2C00"-->
-<!--            app:fab_icon="@drawable/ic_pause"-->
-<!--            app:backgroundTint="@color/white"-->
-<!--            />-->
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#E53935"
+            app:fab_colorPressed="#00ACC1"
+            app:fab_icon="@drawable/ic_delete"
+            app:backgroundTint="@color/white"
+        />
 
-<!--    //</com.getbase.floatingactionbutton.FloatingActionsMenu>-->
+    //</com.getbase.floatingactionbutton.FloatingActionsMenu>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

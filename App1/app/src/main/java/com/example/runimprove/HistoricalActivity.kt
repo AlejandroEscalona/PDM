@@ -25,6 +25,13 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true);
+
+        binding.btnDelete.setOnClickListener(){
+            if( database.deleteAllEntreno()){
+                entrenoAdapter.removeAll()
+                Snackbar.make(binding.root, getString(R.string.delete_all_entrenos), Snackbar.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -48,14 +55,13 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
             .setPositiveButton(getString(R.string.eliminar)) { dialogInterface, i ->
                 if (database.deleteEntreno(entreno)) {
                     entrenoAdapter.remove(entreno)
-                    Snackbar.make(binding.root, "Borrado con exito.", Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(binding.root, getString(R.string.borrado_exito), Snackbar.LENGTH_SHORT).show()
                 }else
-                    Snackbar.make(binding.root, "Error al borrar", Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(binding.root, getString(R.string.error_borrar), Snackbar.LENGTH_SHORT).show()
             }
             .setNegativeButton(getString(R.string.cancelar),null)
         builder.create().show()
     }
-
 
 }
 

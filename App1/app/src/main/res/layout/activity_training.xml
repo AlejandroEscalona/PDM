@@ -217,7 +217,7 @@
                     android:layout_gravity="bottom"
                     android:background="#8c000000"
                     android:gravity="center"
-                    android:text="Estiramientos"
+                    android:text="@string/estiramientos"
                     android:textColor="#ffe3e3e3"
                     android:textSize="26sp"
                     android:textStyle="bold" />

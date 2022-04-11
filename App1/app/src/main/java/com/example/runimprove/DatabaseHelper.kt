@@ -66,5 +66,13 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
         return result == 1
     }
 
+    fun deleteAllEntreno(): Boolean{
+        val database = this.writableDatabase
+        val result = database.delete(Constants.ENTRENOS,
+            null,null)
+
+        return result == 1
+    }
+
 
 }

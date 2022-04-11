@@ -5,11 +5,11 @@
     <string name="sprints">Sprints</string>
     <string name="tecnica">Technique</string>
     <string name="resistencia">Endurance</string>
-    <string name="bajadas">descents</string>
+    <string name="bajadas">Descents</string>
     <string name="hit">Hit</string>
-    <string name="historial_de_entrenamientos">training history</string>
+    <string name="historial_de_entrenamientos">Training history</string>
     <string name="entrenar">Train</string>
-    <string name="estirar">stretch</string>
+    <string name="estirar">Stretch</string>
     <string name="messageWithLink"><a href="https://www.google.com/">Help</a></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -31,4 +31,6 @@
     <string name="entenamiento_de_resistencia">Training of Endurance</string>
     <string name="entenamiento_de_tecnica">Training of Technique</string>
     <string name="entenamiento_de_bajadas">Training of descents</string>
+    <string name="estiramientos">Stretching</string>
+
 </resources>

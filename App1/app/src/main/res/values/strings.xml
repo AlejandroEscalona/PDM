@@ -30,4 +30,8 @@
     <string name="entenamiento_de_resistencia">Entenamiento de Resistencia</string>
     <string name="entenamiento_de_tecnica">Entenamiento de Técnica</string>
     <string name="entenamiento_de_bajadas">Entenamiento de Bajadas</string>
+    <string name="estiramientos">Estiramientos</string>
+    <string name="borrado_exito">Borrado con exito.</string>
+    <string name="error_borrar">Error al borrar</string>
+    <string name="delete_all_entrenos">Se han borrado todos los entrenos con exito</string>
 </resources>

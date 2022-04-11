@@ -1,5 +1,6 @@
 package com.example.runimprove
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,8 +37,15 @@ class EntrenoAdapter(var entrenoList: MutableList<Entreno>, private val listener
 
     override fun getItemCount(): Int = entrenoList.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun remove(entreno: Entreno){
         entrenoList.remove(entreno)
+        notifyDataSetChanged()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun removeAll(){
+        entrenoList.clear()
         notifyDataSetChanged()
     }
 

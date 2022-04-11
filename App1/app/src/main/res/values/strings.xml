@@ -25,13 +25,16 @@
     <string name="historial_de">Historial de</string>
     <string name="entrenamientos">Entrenamientos</string>
     <string name="sesion_de_estiramientos">Sesión de Estiramientos</string>
-    <string name="entenamiento_de_hit">Entenamiento de Hit</string>
-    <string name="entenamiento_de_sprints">Entenamiento de Sprints</string>
-    <string name="entenamiento_de_resistencia">Entenamiento de Resistencia</string>
-    <string name="entenamiento_de_tecnica">Entenamiento de Técnica</string>
-    <string name="entenamiento_de_bajadas">Entenamiento de Bajadas</string>
+    <string name="entrenamiento_de_hit">entrenamiento de Hit</string>
+    <string name="entrenamiento_de_sprints">entrenamiento de Sprints</string>
+    <string name="entrenamiento_de_resistencia">entrenamiento de Resistencia</string>
+    <string name="entrenamiento_de_tecnica">entrenamiento de Técnica</string>
+    <string name="entrenamiento_de_bajadas">entrenamiento de Bajadas</string>
     <string name="estiramientos">Estiramientos</string>
     <string name="borrado_exito">Borrado con exito.</string>
     <string name="error_borrar">Error al borrar</string>
     <string name="delete_all_entrenos">Se han borrado todos los entrenos con exito</string>
+    <string name="marcar_serie">Debes marcar alguna serie</string>
+    <string name="guardar_exito">Guardado con exito.</string>
+    <string name="error_guardar">Failed to save.</string>
 </resources>

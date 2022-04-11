@@ -26,11 +26,17 @@
     <string name="historial_de">History of</string>
     <string name="entrenamientos">Training</string>
     <string name="sesion_de_estiramientos">Stretching Session</string>
-    <string name="entenamiento_de_hit">Training of Hit</string>
-    <string name="entenamiento_de_sprints">Training of Sprints</string>
-    <string name="entenamiento_de_resistencia">Training of Endurance</string>
-    <string name="entenamiento_de_tecnica">Training of Technique</string>
-    <string name="entenamiento_de_bajadas">Training of descents</string>
+    <string name="entrenamiento_de_hit">Training of Hit</string>
+    <string name="entrenamiento_de_sprints">Training of Sprints</string>
+    <string name="entrenamiento_de_resistencia">Training of Endurance</string>
+    <string name="entrenamiento_de_tecnica">Training of Technique</string>
+    <string name="entrenamiento_de_bajadas">Training of descents</string>
     <string name="estiramientos">Stretching</string>
+    <string name="borrado_exito">Erased successfully</string>
+    <string name="error_borrar">Error when deleting</string>
+    <string name="delete_all_entrenos">All trainings have been successfully deleted</string>
+    <string name="marcar_serie">You must mark some series</string>
+    <string name="guardar_exito">Saved successfully.</string>
+    <string name="error_guardar">Error al guardar.</string>
 
 </resources>

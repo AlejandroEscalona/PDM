@@ -39,7 +39,7 @@ class SprintsFragment : Fragment() {
 
         val activity = activity as? TrainingActivity
         //activity?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        activity?.supportActionBar?.title = "Entrenar Sprints"
+        activity?.supportActionBar?.title = getString(R.string.entrenamiento_de_sprints)
        /* val enlace: TextView = mBinding.twEnalce
         enlace.movementMethod = LinkMovementMethod.getInstance()*/
 
@@ -126,7 +126,7 @@ class SprintsFragment : Fragment() {
 
     override fun onDestroy() {
         val activity = activity as? TrainingActivity
-        activity?.supportActionBar?.title = "Entrenar"
+        activity?.supportActionBar?.title = getString(R.string.entrenar)
         super.onDestroy()
     }
 

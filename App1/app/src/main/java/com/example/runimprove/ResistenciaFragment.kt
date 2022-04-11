@@ -24,8 +24,7 @@ class ResistenciaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val activity = activity as? TrainingActivity
-        //activity?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        activity?.supportActionBar?.title = "Entrenar Resistencia"
+        activity?.supportActionBar?.title = getString(R.string.entrenamiento_de_resistencia)
 
         mBinding.btnPlay.setOnClickListener {
             object : CountDownTimer(20000, 1000) {
@@ -102,7 +101,7 @@ class ResistenciaFragment : Fragment() {
 
     override fun onDestroy() {
         val activity = activity as? TrainingActivity
-        activity?.supportActionBar?.title = "Entrenar"
+        activity?.supportActionBar?.title = getString(R.string.entrenar)
         super.onDestroy()
     }
 

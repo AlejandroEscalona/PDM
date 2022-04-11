@@ -88,15 +88,15 @@ class TrainingActivity : AppCompatActivity() {
             R.id.btnSaveHit -> tipo = "Hit"
         }
 
-        var completado = ((porcentajeEntreno / 12.0)*100).toInt().toDouble()
-        if(completado == 0.0) Snackbar.make(binding.root, getString(R.string.marcar_serie), Snackbar.LENGTH_SHORT).show()
-
+        val completado = ((porcentajeEntreno / 12.0)*100).toInt().toDouble()
         val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
         //Insertamos entreno en la base de datos
-        val id = database.insertEntreno(tipo,completado,(now().format(formatter)).toString())
-        if(id != -1L ){
-            Snackbar.make(binding.root, getString(R.string.guardar_exito), Snackbar.LENGTH_SHORT).show()
-        } else Snackbar.make(binding.root, getString(R.string.error_guardar), Snackbar.LENGTH_SHORT).show()
+        if(completado > 0){
+            val id = database.insertEntreno(tipo,completado,(now().format(formatter)).toString())
+            if(id != -1L ){
+                Snackbar.make(binding.root, getString(R.string.guardar_exito), Snackbar.LENGTH_SHORT).show()
+            } else Snackbar.make(binding.root, getString(R.string.error_guardar), Snackbar.LENGTH_SHORT).show()
+        }else Snackbar.make(binding.root, getString(R.string.marcar_serie), Snackbar.LENGTH_SHORT).show()
     }
 
     fun onCheckboxClicked(view: View) {
@@ -194,3 +194,4 @@ class TrainingActivity : AppCompatActivity() {
         }
     }
 }
+

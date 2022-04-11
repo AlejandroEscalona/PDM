@@ -27,10 +27,9 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
         supportActionBar?.setDisplayShowHomeEnabled(true);
 
         binding.btnDelete.setOnClickListener(){
-            if( database.deleteAllEntreno()){
+                database.deleteAllEntreno()
                 entrenoAdapter.removeAll()
                 Snackbar.make(binding.root, getString(R.string.delete_all_entrenos), Snackbar.LENGTH_SHORT).show()
-            }
         }
     }
 

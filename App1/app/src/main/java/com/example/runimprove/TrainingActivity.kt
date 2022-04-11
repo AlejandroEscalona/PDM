@@ -80,12 +80,12 @@ class TrainingActivity : AppCompatActivity() {
         var tipo = ""
         //Obtenemos el tipo de entreno
         when(view.id){
-            R.id.btnSaveSprint -> tipo = "Sprints"
-            R.id.btnSaveTecnica -> tipo = "Técnica"
-            R.id.btnSaveEstiramientos -> tipo = "Estiramientos"
-            R.id.btnSaveBajadas -> tipo = "Bajadas"
-            R.id.btnSaveResistencia -> tipo = "Resistencia"
-            R.id.btnSaveHit -> tipo = "Hit"
+            R.id.btnSaveSprint -> tipo = getString(R.string.sprints)
+            R.id.btnSaveTecnica -> tipo = getString(R.string.tecnica)
+            R.id.btnSaveEstiramientos -> tipo = getString(R.string.estiramientos)
+            R.id.btnSaveBajadas -> tipo = getString(R.string.bajadas)
+            R.id.btnSaveResistencia -> tipo = getString(R.string.resistencia)
+            R.id.btnSaveHit -> tipo = getString(R.string.hit)
         }
 
         val completado = ((porcentajeEntreno / 12.0)*100).toInt().toDouble()

@@ -2,14 +2,11 @@ package com.example.runimprove
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.GridLayout
 import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.runimprove.databinding.ActivityHistoricalBinding
 import com.google.android.material.snackbar.Snackbar
-import java.security.AccessController.getContext
-import java.time.LocalTime.now
 
 class HistoricalActivity : AppCompatActivity(), OnClickListener {
 
@@ -36,6 +33,8 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
                 Snackbar.make(binding.root, getString(R.string.delete_all_entrenos), Snackbar.LENGTH_SHORT).show()
         }
         binding.btnGrafica.setOnClickListener(){
+            val fragment = GraficaFragment()
+            launchFragment(fragment)
         }
     }
 
@@ -52,6 +51,23 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
                 adapter = entrenoAdapter
             }
     }
+
+    fun getStadistics(){
+       // val data = database.stadistic()
+        val fragment = GraficaFragment()
+        launchFragment(fragment)
+
+    }
+
+    private fun launchFragment(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.add(binding.containerMain.id,fragment)
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
+    }
+
+
 
 
     override fun onLongClick(entreno: Entreno) {

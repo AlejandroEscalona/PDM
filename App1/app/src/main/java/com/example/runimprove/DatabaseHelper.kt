@@ -70,8 +70,28 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
         val database = this.writableDatabase
         val result = database.delete(Constants.ENTRENOS,
             null,null)
-
         return result == 1
+    }
+
+    fun stadistic():MutableList<Int>{
+        var tipos = mutableListOf<String>("${R.string.sprints}", "${R.string.hit}",
+            "${R.string.bajadas}", "${R.string.resistencia}" ,
+            "${R.string.tecnica}", "${R.string.estiramientos}")
+        var cantidad : MutableList<Int> = mutableListOf()
+
+        val database = this.readableDatabase
+
+        tipos.forEach {
+            val query = "SELECT count (*) " +
+                    "FROM ${Constants.ENTRENOS}" +
+                    " WHERE Constants.PROPERTY_TIPO = $it "
+            val result = database.rawQuery(query,null)
+            result.moveToFirst();
+            val resultado_final = result.getInt(0)
+            cantidad.add(resultado_final)
+        }
+
+        return cantidad
     }
 
 

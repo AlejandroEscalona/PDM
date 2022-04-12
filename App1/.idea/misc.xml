@@ -20,10 +20,13 @@
         <entry key="app/src/main/res/layout/activity_training.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_bajadas.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_estiramientos.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_grafica.xml" value="0.534375" />
         <entry key="app/src/main/res/layout/fragment_hit.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_item_list_dialog_list_dialog.xml" value="0.534375" />
         <entry key="app/src/main/res/layout/fragment_resistencia.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_sprints.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_tecnica.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/grafica_layout.xml" value="0.534375" />
         <entry key="app/src/main/res/layout/item_entreno.xml" value="0.534375" />
         <entry key="app/src/main/res/layout/test.xml" value="0.35625" />
       </map>

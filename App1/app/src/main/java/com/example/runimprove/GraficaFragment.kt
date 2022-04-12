@@ -26,7 +26,7 @@ class GraficaFragment : Fragment() {
     }
 
     override fun onDestroy() {
-        val activity = activity as? TrainingActivity
+        val activity = activity as? HistoricalActivity
         activity?.supportActionBar?.title = getString(R.string.historial_de_entrenamientos)
         super.onDestroy()
     }

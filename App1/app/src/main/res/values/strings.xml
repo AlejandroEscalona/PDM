@@ -25,11 +25,11 @@
     <string name="historial_de">Historial de</string>
     <string name="entrenamientos">Entrenamientos</string>
     <string name="sesion_de_estiramientos">Sesión de Estiramientos</string>
-    <string name="entrenamiento_de_hit">entrenamiento de Hit</string>
-    <string name="entrenamiento_de_sprints">entrenamiento de Sprints</string>
-    <string name="entrenamiento_de_resistencia">entrenamiento de Resistencia</string>
-    <string name="entrenamiento_de_tecnica">entrenamiento de Técnica</string>
-    <string name="entrenamiento_de_bajadas">entrenamiento de Bajadas</string>
+    <string name="entrenamiento_de_hit">Entrenamiento de Hit</string>
+    <string name="entrenamiento_de_sprints">Entrenamiento de Sprints</string>
+    <string name="entrenamiento_de_resistencia">Entrenamiento de Resistencia</string>
+    <string name="entrenamiento_de_tecnica">Entrenamiento de Técnica</string>
+    <string name="entrenamiento_de_bajadas">Entrenamiento de Bajadas</string>
     <string name="estiramientos">Estiramientos</string>
     <string name="borrado_exito">Borrado con exito.</string>
     <string name="error_borrar">Error al borrar</string>
@@ -40,6 +40,6 @@
     <string name="tipo_subrayado"><u>Tipo</u></string>
     <string name="porcentaje_subrayado"><u>Porcentaje</u></string>
     <string name="fecha_subrayado"><u>Fecha</u></string>
-    <string name="historial">Historial de Entrenamientos</string>
     <string name="grafica">Gráfica</string>
+    <string name="porcentaje_grafica">Porcentaje por tipos de Entreno</string>
 </resources>

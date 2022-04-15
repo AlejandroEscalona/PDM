@@ -4,15 +4,11 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.runimprove.databinding.ActivityGraficaBinding
-import com.github.mikephil.charting.animation.Easing
-import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.charts.PieChart
-import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.PercentFormatter
-import com.github.mikephil.charting.utils.ColorTemplate
-import com.github.mikephil.charting.utils.ColorTemplate.COLORFUL_COLORS
+
 
 
 class GraficaActivity : AppCompatActivity() {
@@ -96,7 +92,7 @@ class GraficaActivity : AppCompatActivity() {
 
         //add text in center
         pieChart.setDrawCenterText(true);
-        pieChart.centerText = "Porcentaje por tipos de Entreno"
+        pieChart.centerText = getString(R.string.porcentaje_grafica)
 
 
         pieChart.invalidate()

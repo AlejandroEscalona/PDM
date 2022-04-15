@@ -41,4 +41,6 @@
     <string name="tipo_subrayado"><u>Type</u></string>
     <string name="porcentaje_subrayado"><u>Percentage</u></string>
     <string name="fecha_subrayado"><u>Date</u></string>
+    <string name="grafica">Graph</string>
+    <string name="porcentaje_grafica">Percentage by types of Training</string>
 </resources>

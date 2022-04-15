@@ -30,14 +30,6 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_16dp"
-                android:gravity="center"
-                android:text="@string/sesion_de_estiramientos"
-                android:textColor="@color/color_titulos"
-                android:textSize="32dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -81,39 +73,53 @@
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16dp"
                 android:orientation="horizontal">
-
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
                 <CheckBox
                     android:id="@+id/calentamiento_serie1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
+                    android:textSize="@dimen/size_checkbox"
                     android:text="1ª serie" />
+                    <CheckBox
+                        android:id="@+id/calentamiento_serie3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTintMode="add"
+                        android:onClick="onCheckboxClicked"
+                        android:textSize="@dimen/size_checkbox"
+                        android:text="3ª serie" />
 
-                <CheckBox
-                    android:id="@+id/calentamiento_serie2"
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onCheckboxClicked"
-                    android:text="2ª serie" />
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/calentamiento_serie3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTintMode="add"
-                    android:onClick="onCheckboxClicked"
-                    android:text="3ª serie" />
-
+                    <CheckBox
+                        android:id="@+id/calentamiento_serie2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked"
+                        android:textSize="@dimen/size_checkbox"
+                        android:text="2ª serie" />
                 <CheckBox
                     android:id="@+id/calentamiento_serie4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
+                    android:textSize="@dimen/size_checkbox"
                     android:text="4ª serie" />
+                </LinearLayout>
             </LinearLayout>
 
 
@@ -158,38 +164,53 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dp"
                 android:orientation="horizontal">
-
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
                 <CheckBox
                     android:id="@+id/entrenamiento1_serie1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
+                    android:textSize="@dimen/size_checkbox"
                     android:text="1ª serie" />
 
-                <CheckBox
-                    android:id="@+id/entrenamiento1_serie2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onCheckboxClicked"
-                    android:text="2ª serie" />
 
-                <CheckBox
-                    android:id="@+id/entrenamiento1_serie3"
+                    <CheckBox
+                        android:id="@+id/entrenamiento1_serie3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked"
+                        android:textSize="@dimen/size_checkbox"
+                        android:text="3ª serie" />
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onCheckboxClicked"
-                    android:text="3ª serie" />
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+                    <CheckBox
+                        android:id="@+id/entrenamiento1_serie2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked"
+                        android:textSize="@dimen/size_checkbox"
+                        android:text="2ª serie" />
 
                 <CheckBox
                     android:id="@+id/entrenamiento1_serie4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
+                    android:textSize="@dimen/size_checkbox"
                     android:text="4ª serie" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -226,37 +247,51 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
                 <CheckBox
                     android:id="@+id/entrenamiento2_serie1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
+                    android:textSize="@dimen/size_checkbox"
                     android:text="1ª serie" />
+                    <CheckBox
+                        android:id="@+id/entrenamiento2_serie3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked"
+                        android:textSize="@dimen/size_checkbox"
+                        android:text="3ª serie" />
 
-                <CheckBox
-                    android:id="@+id/entrenamiento2_serie2"
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onCheckboxClicked"
-                    android:text="2ª serie" />
-
-                <CheckBox
-                    android:id="@+id/entrenamiento2_serie3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onCheckboxClicked"
-                    android:text="3ª serie" />
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+                    <CheckBox
+                        android:id="@+id/entrenamiento2_serie2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked"
+                        android:textSize="@dimen/size_checkbox"
+                        android:text="2ª serie" />
 
                 <CheckBox
                     android:id="@+id/entrenamiento2_serie4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onCheckboxClicked"
+                    android:textSize="@dimen/size_checkbox"
                     android:text="4ª serie" />
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>

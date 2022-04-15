@@ -50,7 +50,6 @@ class GraficaActivity : AppCompatActivity() {
         pieChart.setExtraOffsets(20f, 0f, 20f, 0f)
         pieChart.setUsePercentValues(true)
         pieChart.isRotationEnabled = false
-        pieChart.setDrawEntryLabels(false)
         pieChart.legend.orientation = Legend.LegendOrientation.HORIZONTAL
         pieChart.legend.isWordWrapEnabled = true
         pieChart.legend.textSize = 36f
@@ -85,8 +84,8 @@ class GraficaActivity : AppCompatActivity() {
         dataSet.colors = colors
         pieChart.data = data
         data.setValueTextSize(20f)
-        pieChart.setExtraOffsets(5f, 10f, 5f, 5f)
-       // pieChart.animateY(1400, Easing.EaseInOutQuad)
+        pieChart.setExtraOffsets(5f, 5f, 5f, 10f)
+        pieChart.animateY(1400)
 
         //create hole in center
         pieChart.holeRadius = 58f
@@ -100,58 +99,10 @@ class GraficaActivity : AppCompatActivity() {
         pieChart.centerText = "Porcentaje por tipos de Entreno"
 
 
-
         pieChart.invalidate()
 
     }
 
-    private fun crearGrafico() {
-//        //val datos = database.stadistic()
-//
-//        pieChart.setUsePercentValues(true)
-//        pieChart.description.text = "Gráfico de Entrenos"
-//        //hollow pie chart
-//        pieChart.isDrawHoleEnabled = false
-//        pieChart.setTouchEnabled(false)
-//        pieChart.setDrawEntryLabels(false)
-//        //adding padding
-//        pieChart.setExtraOffsets(20f, 0f, 20f, 20f)
-//        pieChart.setUsePercentValues(true)
-//        pieChart.isRotationEnabled = false
-//        pieChart.setDrawEntryLabels(false)
-//        pieChart.legend.orientation = Legend.LegendOrientation.VERTICAL
-//        pieChart.legend.isWordWrapEnabled = true
-//
-//        val dataEntries = ArrayList<PieEntry>()
-//        dataEntries.add(PieEntry(2f, "Sprints"))
-//        dataEntries.add(PieEntry(3f, "Hit"))
-//        dataEntries.add(PieEntry(4f, "Bajadas"))
-//        dataEntries.add(PieEntry(5f, "Resistencia"))
-//        dataEntries.add(PieEntry(3f, "Técnica"))
-//        dataEntries.add(PieEntry(4f, "Estiramientos"))
-//
-//        val dataSet = PieDataSet(dataEntries, "texto")
-//        val data = PieData(dataSet)
-//        pieChart.data = data
-
-
-        // In Percentage
-//        data.setValueFormatter(PercentFormatter())
-//        dataSet.sliceSpace = 6f
-      //  dataSet.colors = COLORFUL_COLORS
-
-
-        //data.setValueTextSize(15f)
-        //pieChart.setExtraOffsets(5f, 10f, 5f, 5f)
-        //pieChart.animateY(1400, Easing.EaseInOutQuad)
-
-//        //create hole in center
-//        pieChart.holeRadius = 58f
-//        pieChart.transparentCircleRadius = 61f
-//        pieChart.isDrawHoleEnabled = true
-//        pieChart.setHoleColor(Color.WHITE)
-
-    }
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

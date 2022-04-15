@@ -88,17 +88,39 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
             do {
                 when {
                     result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Sprints" -> {
-                        cantidad.indexOf(0).plus(1)
+                        cantidad[0] = cantidad[0] + 1
                     }
                     result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Hit" -> {
-                        cantidad.indexOf(1).plus(1)
+                        cantidad[1] = cantidad[1] + 1
+                    }
+                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Descents" -> {
+                        cantidad[2] = cantidad[2] + 1
                     }
                     result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Bajadas" -> {
-                        cantidad.indexOf(2).plus(1)
+                        cantidad[2] = cantidad[2] + 1
+                    }
+                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Endurance" -> {
+                        cantidad[3] = cantidad[3] + 1
+                    }
+                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Resistencia" -> {
+                        cantidad[3] = cantidad[3] + 1
+                    }
+                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Técnica" -> {
+                        cantidad[4] = cantidad[4] + 1
+                    }
+                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Technique" -> {
+                        cantidad[4] = cantidad[4] + 1
+                    }
+                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Stretching" -> {
+                        cantidad[5] = cantidad[5] + 1
+                    }
+                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Estiramientos" -> {
+                        cantidad[5] = cantidad[5] + 1
                     }
                 }
             }while (result.moveToNext())
         }
+
         return cantidad
     }
 

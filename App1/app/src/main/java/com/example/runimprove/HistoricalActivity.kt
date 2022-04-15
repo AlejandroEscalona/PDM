@@ -84,15 +84,6 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
 
         val intent = Intent(this,GraficaActivity::class.java)
 
-        intent.putExtra("prueba",1993)
-//        intent.putExtra(getString(R.string.sprints),1)
-//        intent.putExtra(getString(R.string.hit),2)
-//        intent.putExtra(getString(R.string.bajadas),3)
-//        intent.putExtra(getString(R.string.resistencia),4)
-//        intent.putExtra(getString(R.string.tecnica),5)
-//        intent.putExtra(getString(R.string.estiramientos),6)
-
-
         if(intent.resolveActivity(packageManager) != null){
             startActivity(intent)
         } else {

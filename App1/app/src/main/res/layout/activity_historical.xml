@@ -18,18 +18,11 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/historial_de"
+        android:text="@string/historial_de_entrenamientos"
         android:textSize="40sp"
         android:gravity="center"
         android:layout_marginTop="32dp"
         android:textColor="#553908" />
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/entrenamientos"
-            android:textSize="40sp"
-            android:gravity="center"
-            android:textColor="#553908" />
 
         <LinearLayout
             android:layout_width="match_parent"

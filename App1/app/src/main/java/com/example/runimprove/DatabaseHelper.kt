@@ -73,24 +73,32 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
         return result == 1
     }
 
+    @SuppressLint("Recycle", "Range")
     fun stadistic():MutableList<Int>{
-        var tipos = mutableListOf<String>("${R.string.sprints}", "${R.string.hit}",
-            "${R.string.bajadas}", "${R.string.resistencia}" ,
-            "${R.string.tecnica}", "${R.string.estiramientos}")
-        var cantidad : MutableList<Int> = mutableListOf()
+        var cantidad =mutableListOf<Int>()
+        cantidad.addAll(listOf(0,0,0,0,0,0))
 
         val database = this.readableDatabase
+        val query = "SELECT * FROM ${Constants.ENTRENOS}"
 
-        tipos.forEach {
-            val query = "SELECT count (*) " +
-                    "FROM ${Constants.ENTRENOS}" +
-                    " WHERE Constants.PROPERTY_TIPO = $it "
-            val result = database.rawQuery(query,null)
-            result.moveToFirst();
-            val resultado_final = result.getInt(0)
-            cantidad.add(resultado_final)
+        val result = database.rawQuery(query,null)
+
+        if(result.moveToFirst()){
+
+            do {
+                when {
+                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Sprints" -> {
+                        cantidad.indexOf(0).plus(1)
+                    }
+                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Hit" -> {
+                        cantidad.indexOf(1).plus(1)
+                    }
+                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Bajadas" -> {
+                        cantidad.indexOf(2).plus(1)
+                    }
+                }
+            }while (result.moveToNext())
         }
-
         return cantidad
     }
 

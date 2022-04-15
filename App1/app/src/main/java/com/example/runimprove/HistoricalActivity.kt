@@ -1,8 +1,13 @@
 package com.example.runimprove
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.runimprove.databinding.ActivityHistoricalBinding
@@ -23,7 +28,6 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
         getEntrenos()
         binding.recyclerViewEntrenos.setHasFixedSize(true)
 
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true);
 
@@ -33,8 +37,7 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
                 Snackbar.make(binding.root, getString(R.string.delete_all_entrenos), Snackbar.LENGTH_SHORT).show()
         }
         binding.btnGrafica.setOnClickListener(){
-            val fragment = GraficaFragment()
-            launchFragment(fragment)
+            launchIntent()
         }
     }
 
@@ -52,22 +55,13 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
             }
     }
 
-    fun getStadistics(){
-       // val data = database.stadistic()
-        val fragment = GraficaFragment()
-        launchFragment(fragment)
-
-    }
-
-    private fun launchFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.add(binding.containerMain.id,fragment)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
-    }
-
-
+//    private fun launchFragment(fragment: Fragment, bundle: Bundle) {
+//        val fragmentManager = supportFragmentManager
+//        val fragmentTransaction = fragmentManager.beginTransaction()
+//        fragmentTransaction.add(binding.containerMain.id,fragment)
+//        fragmentTransaction.addToBackStack(null)
+//        fragmentTransaction.commit()
+//    }
 
 
     override fun onLongClick(entreno: Entreno) {
@@ -82,6 +76,28 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
             }
             .setNegativeButton(getString(R.string.cancelar),null)
         builder.create().show()
+    }
+
+    @SuppressLint("QueryPermissionsNeeded")
+    private fun launchIntent(){
+        //val data = database.stadistic()
+
+        val intent = Intent(this,GraficaActivity::class.java)
+
+        intent.putExtra("prueba",1993)
+//        intent.putExtra(getString(R.string.sprints),1)
+//        intent.putExtra(getString(R.string.hit),2)
+//        intent.putExtra(getString(R.string.bajadas),3)
+//        intent.putExtra(getString(R.string.resistencia),4)
+//        intent.putExtra(getString(R.string.tecnica),5)
+//        intent.putExtra(getString(R.string.estiramientos),6)
+
+
+        if(intent.resolveActivity(packageManager) != null){
+            startActivity(intent)
+        } else {
+            Toast.makeText(this,"No se encontro una app compatible", Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

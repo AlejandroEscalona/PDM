@@ -1,8 +1,10 @@
 package com.example.runimprove
 
+import android.app.PendingIntent.getActivity
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.runimprove.databinding.ActivityGraficaBinding
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Legend
@@ -29,10 +31,11 @@ class GraficaActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true);
 
         pieChart = findViewById(R.id.PieChart)
-        pieChart.setEntryLabelTextSize(22f)
 
+        pieChart.setEntryLabelTextSize(22f)
         initPieChart()
         setDataToPieChart()
+        pieChart.setEntryLabelColor(Color.BLUE);
     }
 
     private fun initPieChart() {
@@ -74,7 +77,6 @@ class GraficaActivity : AppCompatActivity() {
 
         val dataSet = PieDataSet(dataEntries, "")
         val data = PieData(dataSet)
-        // In Percentage
         data.setValueFormatter(PercentFormatter())
         dataSet.sliceSpace = 6f
         dataSet.colors = colors
@@ -93,7 +95,6 @@ class GraficaActivity : AppCompatActivity() {
         //add text in center
         pieChart.setDrawCenterText(true);
         pieChart.centerText = getString(R.string.porcentaje_grafica)
-
 
         pieChart.invalidate()
 

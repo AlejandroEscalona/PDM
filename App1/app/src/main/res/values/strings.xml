@@ -42,4 +42,12 @@
     <string name="fecha_subrayado"><u>Fecha</u></string>
     <string name="grafica">Gráfica</string>
     <string name="porcentaje_grafica">Porcentaje por tipos de Entreno</string>
+    <string name="descenso_tecnico">Descenso técnico</string>
+    <string name="descenso_agresivo">Descenso agresivo</string>
+    <string name="estirar_piramidal">Estirar Piramidal</string>
+    <string name="estirar_isquiotibial">Estirar Isquiotibial</string>
+    <string name="estirar_espalda">Estirar Espalda</string>
+    <string name="subidas_1km">Subidas 1km</string>
+    <string name="impulsiones">Impulsiones</string>
+    <string name="skipping_doble">Skipping doble</string>
 </resources>

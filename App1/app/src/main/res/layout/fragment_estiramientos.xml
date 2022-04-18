@@ -47,7 +47,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Jumping Jacks x 20"
+                    android:text="@string/estirar_espalda"
                     android:textSize="20sp" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
@@ -142,7 +142,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Estirar Piramidal"
+                    android:text="@string/estirar_piramidal"
                     android:textSize="20dp" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
@@ -224,7 +224,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Estirar Isquiotibial"
+                    android:text="@string/estirar_isquiotibial"
                     android:textSize="20dp" />
 
                 <androidx.appcompat.widget.AppCompatImageButton

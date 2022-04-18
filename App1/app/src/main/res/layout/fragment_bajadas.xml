@@ -142,7 +142,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Descenso técnico"
+                    android:text="@string/descenso_tecnico"
                     android:textSize="20dp" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
@@ -223,7 +223,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Descenso agresivo"
+                    android:text="@string/descenso_agresivo"
                     android:textSize="20dp" />
 
                 <androidx.appcompat.widget.AppCompatImageButton

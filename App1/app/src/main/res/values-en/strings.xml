@@ -43,4 +43,12 @@
     <string name="fecha_subrayado"><u>Date</u></string>
     <string name="grafica">Graph</string>
     <string name="porcentaje_grafica">Percentage by types of Training</string>
+    <string name="descenso_tecnico">technical descent</string>
+    <string name="descenso_agresivo">aggressive descent</string>
+    <string name="estirar_piramidal">Pyramid Stretch</string>
+    <string name="estirar_isquiotibial">Hamstring Stretch</string>
+    <string name="estirar_espalda">Back Stretch</string>
+    <string name="subidas_1km">Climbs 1km</string>
+    <string name="impulsiones">drives</string>
+    <string name="skipping_doble">double skipping</string>
 </resources>

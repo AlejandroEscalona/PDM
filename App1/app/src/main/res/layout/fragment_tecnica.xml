@@ -143,7 +143,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Skipping doble"
+                    android:text="@string/skipping_doble"
                     android:textSize="20dp" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
@@ -225,7 +225,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Impulsiones"
+                    android:text="@string/impulsiones"
                     android:textSize="20dp" />
 
                 <androidx.appcompat.widget.AppCompatImageButton

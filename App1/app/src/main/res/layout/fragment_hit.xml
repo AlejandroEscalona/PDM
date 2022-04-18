@@ -224,7 +224,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Hiit 90m"
+                    android:text="Hit 90m"
                     android:textSize="20dp" />
 
                 <androidx.appcompat.widget.AppCompatImageButton

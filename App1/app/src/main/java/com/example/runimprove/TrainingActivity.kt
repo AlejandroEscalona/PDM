@@ -183,7 +183,7 @@ class TrainingActivity : AppCompatActivity() {
                     }
                 }R.id.entrenamiento2_serie4 -> {
                     if (checked) {
-                        Toast.makeText(this, "Muy bien, has acabado!!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getString(R.string.acabado), Toast.LENGTH_SHORT).show()
                         porcentajeEntreno = porcentajeEntreno.plus(1)
 
                     } else {

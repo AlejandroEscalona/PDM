@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_16dp"
                 android:text="@string/calentamiento"
-                android:textColor="@color/color_titulos"
+                android:textColor="?attr/colorSecondary"
                 android:textSize="28dp" />
 
             <LinearLayout
@@ -130,7 +130,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="@dimen/margin_16dp"
                 android:text="@string/entrenamiento"
-                android:textColor="@color/color_titulos"
+                android:textColor="?attr/colorSecondary"
                 android:textSize="28dp" />
 
             <LinearLayout
@@ -328,7 +328,7 @@
         android:layout_gravity="end|bottom"
         android:backgroundTint="@color/verde_tema"
         app:fab_addButtonColorNormal="#689F38"
-        app:fab_labelStyle="@color/color_titulos"
+        app:fab_labelStyle="?attr/colorSecondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -339,7 +339,7 @@
             app:fab_colorNormal="#FB8C00"
             app:fab_colorPressed="#DD2C00"
             app:fab_icon="@drawable/ic_stop_alarm"
-            app:fab_labelStyle="@color/color_titulos"
+            app:fab_labelStyle="?attr/colorSecondary"
             app:backgroundTint="@color/white"
             />
 

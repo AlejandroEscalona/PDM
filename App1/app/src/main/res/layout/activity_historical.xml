@@ -22,7 +22,7 @@
         android:textSize="40sp"
         android:gravity="center"
         android:layout_marginTop="32dp"
-        android:textColor="#553908" />
+        android:textColor="?attr/colorSecondary" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -99,7 +99,7 @@
         android:layout_gravity="end|bottom"
         android:backgroundTint="@color/verde_tema"
         app:fab_addButtonColorNormal="#689F38"
-        app:fab_labelStyle="@color/color_titulos"
+        app:fab_labelStyle="?attr/colorSecondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 

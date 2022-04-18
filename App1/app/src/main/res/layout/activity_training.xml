@@ -18,7 +18,7 @@
             android:textSize="@dimen/size_title_activity"
             android:gravity="center"
             android:layout_marginTop="24dp"
-            android:textColor="#553908"
+            android:textColor="?attr/colorSecondary"
             />
 
         <LinearLayout

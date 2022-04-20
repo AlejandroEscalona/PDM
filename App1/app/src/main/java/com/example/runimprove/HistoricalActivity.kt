@@ -46,6 +46,10 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
         return false
     }
 
+    /**
+     * @author Alejandro Escalona García
+     * Obtiene todos los entrenos de la base de datos
+     */
      fun getEntrenos(){
          val data = database.getAllEntrenos()
          entrenoAdapter = EntrenoAdapter(data,this)
@@ -55,15 +59,12 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
             }
     }
 
-//    private fun launchFragment(fragment: Fragment, bundle: Bundle) {
-//        val fragmentManager = supportFragmentManager
-//        val fragmentTransaction = fragmentManager.beginTransaction()
-//        fragmentTransaction.add(binding.containerMain.id,fragment)
-//        fragmentTransaction.addToBackStack(null)
-//        fragmentTransaction.commit()
-//    }
 
-
+    /**
+     * @author Alejandro Escalona García
+     * @param entreno : Entreno que se va a borrar
+     * Borra un entreno al mantener pulsado sobre el mismo
+     */
     override fun onLongClick(entreno: Entreno) {
         val builder = AlertDialog.Builder(this)
             .setTitle(getString(R.string.borrar_entreno))
@@ -80,10 +81,7 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
 
     @SuppressLint("QueryPermissionsNeeded")
     private fun launchIntent(){
-        //val data = database.stadistic()
-
         val intent = Intent(this,GraficaActivity::class.java)
-
         if(intent.resolveActivity(packageManager) != null){
             startActivity(intent)
         } else {

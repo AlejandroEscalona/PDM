@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         database = DatabaseHelper(this)
     }
 
@@ -26,13 +25,16 @@ class MainActivity : AppCompatActivity() {
         return false
     }
 
+    /**
+     * @author Alejandro Escalona García
+     * @param view : view
+     * Obtiene que activity se va a lanzar
+     */
     fun OnClickButton(view: View){
-
         when(view.id){
             R.id.cardTraining -> {
                 val intent = Intent(this,TrainingActivity::class.java)
                 launchIntent(intent)
-
             }
             R.id.cardHistorial -> {
                 val intent = Intent(this,HistoricalActivity::class.java)
@@ -41,6 +43,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * @author Alejandro Escalona García
+     * @param intent : Intent que se va a lanzar
+     * Lanza una activity
+     */
     private fun launchIntent(intent: Intent){
         if(intent.resolveActivity(packageManager) != null){
             startActivity(intent)

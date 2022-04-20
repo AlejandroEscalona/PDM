@@ -24,11 +24,11 @@ class EstiramientosFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val activity = activity as? TrainingActivity
-        //activity?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         activity?.supportActionBar?.title = getString(R.string.sesion_de_estiramientos)
 
+        //Clic sobre un play y comienza el timer
         mBinding.btnPlay.setOnClickListener {
-            object : CountDownTimer(20000, 1000) {
+            object : CountDownTimer(10000, 1000) {
                 @SuppressLint("SetTextI18n")
                 override fun onTick(millisUntilFinished: Long) {
                     mBinding.tvCuentaAtras.setText("" + millisUntilFinished / 1000)
@@ -50,7 +50,6 @@ class EstiramientosFragment : Fragment() {
             }.start()
         }
 
-
         mBinding.btnPlay2.setOnClickListener {
             object : CountDownTimer(120000, 1000) {
                 @SuppressLint("SetTextI18n")
@@ -61,7 +60,6 @@ class EstiramientosFragment : Fragment() {
                         cancel()
                     }
                 }
-
                 override fun onFinish() {
                     val notificacion =
                         RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
@@ -85,7 +83,6 @@ class EstiramientosFragment : Fragment() {
                         cancel()
                     }
                 }
-
                 override fun onFinish() {
                     val notificacion =
                         RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
@@ -98,7 +95,6 @@ class EstiramientosFragment : Fragment() {
                 }
             }.start()
         }
-
     }
 
     override fun onDestroy() {
@@ -106,5 +102,4 @@ class EstiramientosFragment : Fragment() {
         val activity = activity as? TrainingActivity
         activity?.supportActionBar?.title = getString(R.string.entrenar)
     }
-
 }

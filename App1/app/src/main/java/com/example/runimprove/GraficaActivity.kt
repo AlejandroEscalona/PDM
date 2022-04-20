@@ -1,24 +1,19 @@
 package com.example.runimprove
 
-import android.app.PendingIntent.getActivity
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.example.runimprove.databinding.ActivityGraficaBinding
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.PercentFormatter
 
-
-
 class GraficaActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityGraficaBinding
     private lateinit var database: DatabaseHelper
     private lateinit var pieChart: PieChart
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +33,10 @@ class GraficaActivity : AppCompatActivity() {
         pieChart.setEntryLabelColor(Color.BLUE);
     }
 
+    /**
+     * @author Alejandro Escalona García
+     * Setea al inicio el gráfico
+     */
     private fun initPieChart() {
         pieChart.setUsePercentValues(true)
         pieChart.description.text = ""
@@ -56,6 +55,10 @@ class GraficaActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * @author Alejandro Escalona García
+     * Rellena de datos el gráfico
+     */
     private fun setDataToPieChart() {
         val datos = database.stadistic()
         pieChart.setUsePercentValues(true)
@@ -85,14 +88,12 @@ class GraficaActivity : AppCompatActivity() {
         pieChart.setExtraOffsets(5f, 5f, 5f, 10f)
         pieChart.animateY(1400)
 
-        //create hole in center
         pieChart.holeRadius = 58f
         pieChart.transparentCircleRadius = 61f
         pieChart.isDrawHoleEnabled = true
         pieChart.setHoleColor(Color.WHITE)
         pieChart.setCenterTextSize(22f)
 
-        //add text in center
         pieChart.setDrawCenterText(true);
         pieChart.centerText = getString(R.string.porcentaje_grafica)
 

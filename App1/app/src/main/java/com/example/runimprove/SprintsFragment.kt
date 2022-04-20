@@ -52,7 +52,7 @@ class SprintsFragment : Fragment() {
 
 
         mBinding.btnPlay.setOnClickListener {
-                object : CountDownTimer(20000, 1000) {
+                object : CountDownTimer(10000, 1000) {
                     @SuppressLint("SetTextI18n")
                     override fun onTick(millisUntilFinished: Long) {
                         mBinding.tvCuentaAtras.setText("" + millisUntilFinished / 1000)

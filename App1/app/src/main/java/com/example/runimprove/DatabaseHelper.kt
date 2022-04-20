@@ -9,6 +9,10 @@ import android.database.sqlite.SQLiteOpenHelper
 class DatabaseHelper(context: Context) : SQLiteOpenHelper
     (context, Constants.DATABASE_NAME, null, Constants.DATABASE_VERSION) {
 
+    /**
+     * @author Alejandro Escalona García
+     * @constructor Crea una base de datos.
+    */
     override fun onCreate(db: SQLiteDatabase?) {
         val createTable = "CREATE TABLE ${Constants.ENTRENOS} " +
                 "(${Constants.PROPERTY_ID} INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -19,9 +23,12 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-
     }
 
+    /**
+     * @author Alejandro Escalona García
+     * Devuelve todos los entrenos
+     */
     @SuppressLint("Range")
     fun getAllEntrenos(): MutableList<Entreno>{
         val entrenos : MutableList<Entreno> = mutableListOf()
@@ -46,6 +53,13 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
         return entrenos
     }
 
+    /**
+     * @author Alejandro Escalona García
+     * @param Tipo : String = Tipo del entreno
+     * @param porcentaje : Double = Porcentaje del entreno completado sobre 100
+     * @param fecha : String = Fecha del entreno
+     * Inserta un entreno a la base de datos
+     */
     fun insertEntreno( tipo: String, porcentaje: Double, fecha: String) : Long{
         val database = this.writableDatabase
         val contentValues = ContentValues().apply {
@@ -58,6 +72,11 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
         return resultId
     }
 
+    /**
+     * @author Alejandro Escalona García
+     * @param entreno: Entreno que se va a borrar
+     * Borra un entreno de la base de datos
+     */
     fun deleteEntreno(entreno : Entreno): Boolean{
         val database = this.writableDatabase
         val result = database.delete(Constants.ENTRENOS,
@@ -66,6 +85,10 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
         return result == 1
     }
 
+    /**
+     * @author Alejandro Escalona García
+     * Borra Todos los entrenos de la base de datos
+     */
     fun deleteAllEntreno(): Boolean{
         val database = this.writableDatabase
         val result = database.delete(Constants.ENTRENOS,
@@ -73,6 +96,10 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
         return result == 1
     }
 
+    /**
+     * @author Alejandro Escalona García
+     * Devuelve una lista con los porcentajes por tipo de entreno
+     */
     @SuppressLint("Recycle", "Range")
     fun stadistic():MutableList<Int>{
         var cantidad =mutableListOf<Int>()
@@ -80,11 +107,9 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
 
         val database = this.readableDatabase
         val query = "SELECT * FROM ${Constants.ENTRENOS}"
-
         val result = database.rawQuery(query,null)
 
         if(result.moveToFirst()){
-
             do {
                 when {
                     result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Sprints" -> {
@@ -120,9 +145,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
                 }
             }while (result.moveToNext())
         }
-
         return cantidad
     }
-
-
 }

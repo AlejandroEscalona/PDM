@@ -35,7 +35,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
 
         val database = this.readableDatabase
         val query = "SELECT * FROM ${Constants.ENTRENOS}"
-
         val result = database.rawQuery(query,null)
 
         if(result.moveToFirst()){
@@ -49,7 +48,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
                 entrenos.add(entreno)
             }while (result.moveToNext())
         }
-
         return entrenos
     }
 

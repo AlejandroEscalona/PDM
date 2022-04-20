@@ -18,7 +18,6 @@ class TrainingActivity : AppCompatActivity() {
     var porcentajeEntreno = 0.0
     private lateinit var database: DatabaseHelper
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTrainingBinding.inflate(layoutInflater)
@@ -28,7 +27,7 @@ class TrainingActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true);
 
-
+        //Reiniciamos el porcentaje de entreno al entrar a otro nuevo fragment
         binding.cardSprint.setOnClickListener {
             val fragment = SprintsFragment()
             porcentajeEntreno=0.0
@@ -91,6 +90,7 @@ class TrainingActivity : AppCompatActivity() {
         val completado = ((porcentajeEntreno / 12.0)*100).toInt().toDouble()
         val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
         //Insertamos entreno en la base de datos
+        //comprobando que al menos ha realizado algún ejercicio
         if(completado > 0){
             val id = database.insertEntreno(tipo,completado,(now().format(formatter)).toString())
             if(id != -1L ){

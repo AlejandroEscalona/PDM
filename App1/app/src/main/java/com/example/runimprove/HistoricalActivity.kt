@@ -68,8 +68,7 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
                     }
                     .setNegativeButton(getString(R.string.cancelar),null)
                 builder.create().show()
-                Toast.makeText(this@HistoricalActivity, getString(R.string.borrado_exito), Toast.LENGTH_SHORT).show()
-                //Remove swiped item from list and notify the RecyclerView
+                entrenoAdapter.notifyDataSetChanged()
             }
         }
 

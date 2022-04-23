@@ -2,16 +2,16 @@ package com.example.runimprove
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcelable
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.runimprove.databinding.ActivityHistoricalBinding
 import com.google.android.material.snackbar.Snackbar
+
 
 class HistoricalActivity : AppCompatActivity(), OnClickListener {
 
@@ -39,6 +39,44 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
         binding.btnGrafica.setOnClickListener(){
             launchIntent()
         }
+
+
+        val simpleItemTouchCallback: ItemTouchHelper.SimpleCallback = object :
+            ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                Toast.makeText(this@HistoricalActivity, "on Move", Toast.LENGTH_SHORT).show()
+                return false
+            }
+
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, swipeDir: Int) {
+                val position = viewHolder.adapterPosition
+                val entreno = entrenoAdapter.getIndex(position)
+                val builder = AlertDialog.Builder(this@HistoricalActivity)
+                    .setTitle(getString(R.string.borrar_entreno))
+                    .setPositiveButton(getString(R.string.eliminar)) { dialogInterface, i ->
+                        if (database.deleteEntreno(entreno)) {
+                            entrenoAdapter.remove(entreno)
+                            entrenoAdapter.notifyDataSetChanged()
+                            Snackbar.make(binding.root, getString(R.string.borrado_exito), Snackbar.LENGTH_SHORT).show()
+                        }else
+                            Snackbar.make(binding.root, getString(R.string.error_borrar), Snackbar.LENGTH_SHORT).show()
+                    }
+                    .setNegativeButton(getString(R.string.cancelar),null)
+                builder.create().show()
+                Toast.makeText(this@HistoricalActivity, getString(R.string.borrado_exito), Toast.LENGTH_SHORT).show()
+                //Remove swiped item from list and notify the RecyclerView
+            }
+        }
+
+        val itemTouchHelper = ItemTouchHelper(simpleItemTouchCallback)
+        itemTouchHelper.attachToRecyclerView(binding.recyclerViewEntrenos)
+
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -88,6 +126,9 @@ class HistoricalActivity : AppCompatActivity(), OnClickListener {
             Toast.makeText(this,"No se encontro una app compatible", Toast.LENGTH_SHORT).show()
         }
     }
+
+
+
 
 }
 

@@ -38,8 +38,18 @@ class EntrenoAdapter(var entrenoList: MutableList<Entreno>, private val listener
 
     override fun getItemCount(): Int = entrenoList.size
 
+    fun getIndex(index: Int): Entreno = entrenoList[index]
+
+
     @SuppressLint("NotifyDataSetChanged")
     fun remove(entreno: Entreno){
+        entrenoList.remove(entreno)
+        notifyDataSetChanged()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun remove(index: Int){
+        val entreno = entrenoList[index]
         entrenoList.remove(entreno)
         notifyDataSetChanged()
     }

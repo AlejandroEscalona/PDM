@@ -52,5 +52,6 @@
     <string name="impulsiones">drives</string>
     <string name="skipping_doble">double skipping</string>
     <string name="acabado">Alright, you\'re done!</string>
-
+    <string name="quieres_parar_alarma">Do you want to stop the alarm?</string>
+    <string name="parar_alarma">Stop Alarm</string>
 </resources>

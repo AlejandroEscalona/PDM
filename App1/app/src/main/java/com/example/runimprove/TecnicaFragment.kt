@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.runimprove.databinding.FragmentSprintsBinding
 import com.example.runimprove.databinding.FragmentTecnicaBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class TecnicaFragment : Fragment() {
 
@@ -46,6 +47,7 @@ class TecnicaFragment : Fragment() {
                     this.cancel()
                     val ab = MaterialAlertDialogBuilder(requireContext())
                         .setTitle(getString(R.string.quieres_parar_alarma))
+                        .setCancelable(true)
                         .setPositiveButton(getString(R.string.parar_alarma)) { dialogInterface, i ->
                             r.stop()
                         }

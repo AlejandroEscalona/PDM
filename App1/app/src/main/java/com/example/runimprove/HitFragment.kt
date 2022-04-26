@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.runimprove.databinding.FragmentHitBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
 class HitFragment : Fragment() {

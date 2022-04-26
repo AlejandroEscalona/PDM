@@ -4,11 +4,13 @@ import android.annotation.SuppressLint
 import android.media.RingtoneManager
 import android.os.Bundle
 import android.os.CountDownTimer
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.runimprove.databinding.FragmentBajadasBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+
 
 class BajadasFragment : Fragment() {
 
@@ -17,6 +19,7 @@ class BajadasFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         mBinding = FragmentBajadasBinding.inflate(inflater,container,false)
+
         return mBinding.root
     }
 
@@ -43,12 +46,19 @@ class BajadasFragment : Fragment() {
                     val r = RingtoneManager.getRingtone(activity, notificacion)
                     r.play()
                     this.cancel()
+                    val ab = MaterialAlertDialogBuilder(requireContext())
+                        .setTitle(getString(R.string.quieres_parar_alarma))
+                        .setPositiveButton(getString(R.string.parar_alarma)) { dialogInterface, i ->
+                            r.stop()
+                        }
+                    ab.create().show()
                     mBinding.btnStopMusic.setOnClickListener {
                         r.stop()
                     }
                 }
             }.start()
         }
+
 
 
         mBinding.btnPlay2.setOnClickListener {
@@ -68,6 +78,12 @@ class BajadasFragment : Fragment() {
                     val r = RingtoneManager.getRingtone(activity, notificacion)
                     r.play()
                     this.cancel()
+                    val ab = MaterialAlertDialogBuilder(requireContext())
+                        .setTitle(getString(R.string.quieres_parar_alarma))
+                        .setPositiveButton(getString(R.string.parar_alarma)) { dialogInterface, i ->
+                            r.stop()
+                        }
+                    ab.create().show()
                     mBinding.btnStopMusic.setOnClickListener {
                         r.stop()
                     }
@@ -92,6 +108,12 @@ class BajadasFragment : Fragment() {
                     val r = RingtoneManager.getRingtone(activity, notificacion)
                     r.play()
                     this.cancel()
+                    val ab = MaterialAlertDialogBuilder(requireContext())
+                        .setTitle(getString(R.string.quieres_parar_alarma))
+                        .setPositiveButton(getString(R.string.parar_alarma)) { dialogInterface, i ->
+                            r.stop()
+                        }
+                    ab.create().show()
                     mBinding.btnStopMusic.setOnClickListener {
                         r.stop()
                     }
@@ -105,6 +127,5 @@ class BajadasFragment : Fragment() {
         activity?.supportActionBar?.title = getString(R.string.entrenar)
         super.onDestroy()
     }
-
 
 }

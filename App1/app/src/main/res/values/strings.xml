@@ -51,4 +51,6 @@
     <string name="impulsiones">Impulsiones</string>
     <string name="skipping_doble">Skipping doble</string>
     <string name="acabado">Muy bien, has acabado!!</string>
+    <string name="quieres_parar_alarma">¿Quieres borrar la alarma?</string>
+    <string name="parar_alarma">Parar Alarma</string>
 </resources>

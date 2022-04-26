@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.CheckBox
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.runimprove.databinding.ActivityTrainingBinding
@@ -98,6 +99,8 @@ class TrainingActivity : AppCompatActivity() {
             } else Snackbar.make(binding.root, getString(R.string.error_guardar), Snackbar.LENGTH_SHORT).show()
         }else Snackbar.make(binding.root, getString(R.string.marcar_serie), Snackbar.LENGTH_SHORT).show()
     }
+
+
 
     fun onCheckboxClicked(view: View) {
         if (view is CheckBox) {

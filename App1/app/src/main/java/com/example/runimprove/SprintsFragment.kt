@@ -67,6 +67,12 @@ class SprintsFragment : Fragment() {
                         val r = getRingtone(activity, notificacion)
                         r.play()
                         this.cancel()
+                    val ab = MaterialAlertDialogBuilder(requireContext())
+                        .setTitle(getString(R.string.quieres_parar_alarma))
+                        .setPositiveButton(getString(R.string.parar_alarma)) { dialogInterface, i ->
+                            r.stop()
+                        }
+                    ab.create().show()
                         mBinding.btnStopMusic.setOnClickListener {
                             r.stop()
                         }
@@ -92,6 +98,12 @@ class SprintsFragment : Fragment() {
                         val r = getRingtone(activity, notificacion)
                         r.play()
                         this.cancel()
+                    val ab = MaterialAlertDialogBuilder(requireContext())
+                        .setTitle(getString(R.string.quieres_parar_alarma))
+                        .setPositiveButton(getString(R.string.parar_alarma)) { dialogInterface, i ->
+                            r.stop()
+                        }
+                    ab.create().show()
                         mBinding.btnStopMusic.setOnClickListener {
                             r.stop()
                         }
@@ -116,6 +128,12 @@ class SprintsFragment : Fragment() {
                     val r = getRingtone(activity, notificacion)
                     r.play()
                     this.cancel()
+                    val ab = MaterialAlertDialogBuilder(requireContext())
+                        .setTitle(getString(R.string.quieres_parar_alarma))
+                        .setPositiveButton(getString(R.string.parar_alarma)) { dialogInterface, i ->
+                            r.stop()
+                        }
+                    ab.create().show()
                     mBinding.btnStopMusic.setOnClickListener {
                         r.stop()
                     }

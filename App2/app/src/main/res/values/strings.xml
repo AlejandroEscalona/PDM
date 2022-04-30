@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyWallet</string>
+    <string name="home_title">Inicio</string>
+    <string name="home_incomes">Ingresos</string>
+    <string name="home_costs">Gastos</string>
+    <string name="home_perfil">Perfil</string>
+    <string name="home_movimientos">Movimientos</string>
+</resources>

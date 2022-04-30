@@ -5,4 +5,7 @@
     <string name="home_costs">Gastos</string>
     <string name="home_perfil">Perfil</string>
     <string name="home_movimientos">Movimientos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Camara">Cámara</string>
 </resources>

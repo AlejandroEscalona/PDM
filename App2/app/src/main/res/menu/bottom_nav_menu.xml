@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_perfil"
-        android:title="@string/home_perfil"
+        android:id="@+id/action_camera"
+        android:title="@string/Camara"
         app:showAsAction="never"
-        android:icon="@drawable/ic_perfil"
+        android:icon="@drawable/ic_camera"
          />
     <item
         android:id="@+id/action_home"

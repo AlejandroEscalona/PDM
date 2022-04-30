@@ -16,7 +16,7 @@
         android:icon="@drawable/ic_home"
         />
     <item
-        android:id="@+id/action_incomes"
+        android:id="@+id/action_movements"
         android:title="@string/home_movimientos"
         app:showAsAction="never"
         android:icon="@drawable/ic_exchange"

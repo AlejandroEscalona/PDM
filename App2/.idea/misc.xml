@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.1855" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_camera.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.29907407407407405" />
+        <entry key="app/src/main/res/layout/fragment_movimientos.xml" value="0.35625" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.35625" />
       </map>
     </option>

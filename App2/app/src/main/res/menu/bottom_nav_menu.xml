@@ -3,12 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/action_camera"
-        android:title="@string/Camara"
-        app:showAsAction="never"
-        android:icon="@drawable/ic_camera"
-         />
+
     <item
         android:id="@+id/action_home"
         android:title="@string/home_title"
@@ -21,5 +16,10 @@
         app:showAsAction="never"
         android:icon="@drawable/ic_exchange"
         />
-
+    <item
+        android:id="@+id/action_camera"
+        android:title="@string/Camara"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_camera"
+        />
 </menu>

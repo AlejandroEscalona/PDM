@@ -28,7 +28,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
 
     /**
      * @author Alejandro Escalona García
-     * Devuelve todos los entrenos
+     * Devuelve todos los movimientos
      */
     @SuppressLint("Range")
     fun getAllMovimientos(): MutableList<Movimiento>{
@@ -55,7 +55,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
 
     /**
      * @author Alejandro Escalona García
-     * Devuelve todos los entrenos
+     * Devuelve todos los movimientos tipo de ingresos
      */
     @SuppressLint("Range")
     fun getAllIngresos(): MutableList<Movimiento>{
@@ -82,7 +82,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
 
     /**
      * @author Alejandro Escalona García
-     * Devuelve todos los entrenos
+     * Devuelve todos los movimientos de tipo gasto
      */
     @SuppressLint("Range")
     fun getAllGastos(): MutableList<Movimiento>{
@@ -143,7 +143,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
 
     /**
      * @author Alejandro Escalona García
-     * Borra Todos los entrenos de la base de datos
+     * Borra Todos los movimientos de la base de datos
      */
     fun deleteAllMovimientos(): Boolean{
         val database = this.writableDatabase
@@ -152,55 +152,4 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
         return result == 1
     }
 
-    /**
-     * @author Alejandro Escalona García
-     * Devuelve una lista con los porcentajes por tipo de entreno
-     */
-    @SuppressLint("Recycle", "Range")
-    fun stadistic():MutableList<Int>{
-        var cantidad =mutableListOf<Int>()
-        cantidad.addAll(listOf(0,0,0,0,0,0))
-
-        val database = this.readableDatabase
-        val query = "SELECT * FROM ${Constants.MOVIMIENTOS}"
-        val result = database.rawQuery(query,null)
-
-        if(result.moveToFirst()){
-            do {
-                when {
-                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Sprints" -> {
-                        cantidad[0] = cantidad[0] + 1
-                    }
-                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Hit" -> {
-                        cantidad[1] = cantidad[1] + 1
-                    }
-                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Descents" -> {
-                        cantidad[2] = cantidad[2] + 1
-                    }
-                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Bajadas" -> {
-                        cantidad[2] = cantidad[2] + 1
-                    }
-                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Endurance" -> {
-                        cantidad[3] = cantidad[3] + 1
-                    }
-                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Resistencia" -> {
-                        cantidad[3] = cantidad[3] + 1
-                    }
-                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Técnica" -> {
-                        cantidad[4] = cantidad[4] + 1
-                    }
-                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Technique" -> {
-                        cantidad[4] = cantidad[4] + 1
-                    }
-                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Stretching" -> {
-                        cantidad[5] = cantidad[5] + 1
-                    }
-                    result.getString(result.getColumnIndex(Constants.PROPERTY_TIPO)) == "Estiramientos" -> {
-                        cantidad[5] = cantidad[5] + 1
-                    }
-                }
-            }while (result.moveToNext())
-        }
-        return cantidad
-    }
 }

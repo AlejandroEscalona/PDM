@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWallet">
         <activity
+            android:name=".IngresosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GastosActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

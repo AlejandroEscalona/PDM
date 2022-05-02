@@ -17,7 +17,6 @@ class MovimientoActivity : AppCompatActivity() {
         binding = ActivityMovimientoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupBottomNav()
     }
 
 
@@ -52,24 +51,5 @@ class MovimientoActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupBottomNav(){
-        binding.bottomNav.setOnNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.action_home -> {
-                    val intent = Intent(this,MainActivity::class.java)
-                    launchIntent(intent)
-                    true
-                }R.id.action_camera -> {
-                val intent = Intent(this,MainActivity::class.java)
-                launchIntent(intent)
-                true
-            }R.id.action_movements -> {
-                val intent = Intent(this,MovimientoActivity::class.java)
-                launchIntent(intent)
-                true
-            }
-                else -> false
-            }
-        }
-    }
+
 }

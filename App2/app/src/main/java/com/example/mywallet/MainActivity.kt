@@ -29,11 +29,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     private fun setupBottomNav(){
         binding.bottomNav.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.action_home -> {
-                    val intent = Intent(this,MainActivity::class.java)
-                    launchIntent(intent)
-                    true
-                }R.id.action_camera -> {
+               R.id.action_camera -> {
                     val intent = Intent(this,MainActivity::class.java)
                     launchIntent(intent)
                     true

@@ -58,11 +58,15 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
      * Devuelve todos los movimientos tipo de ingresos
      */
     @SuppressLint("Range")
-    fun getAllIngresos(): MutableList<Movimiento>{
+    fun getAllIngresos(ASC: Boolean = true): MutableList<Movimiento>{
         val movimientos : MutableList<Movimiento> = mutableListOf()
 
         val database = this.readableDatabase
-        val query = "SELECT * FROM ${Constants.MOVIMIENTOS} WHERE tipo == Ingreso"
+        val orden = if (ASC) "ASC" else "DESC"
+        val query =
+            "Select * FROM " + Constants.MOVIMIENTOS + " WHERE " +
+                    Constants.PROPERTY_TIPO + " LIKE " + "'"+ Constants.PROPERTY_INGRESOS +"'"+
+                    "ORDER BY"+ "'"+ Constants.PROPERTY_DATE +"'"+" "+orden
         val result = database.rawQuery(query,null)
 
         if(result.moveToFirst()){
@@ -85,11 +89,15 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
      * Devuelve todos los movimientos de tipo gasto
      */
     @SuppressLint("Range")
-    fun getAllGastos(): MutableList<Movimiento>{
+    fun getAllGastos(ASC: Boolean = true): MutableList<Movimiento>{
         val movimientos : MutableList<Movimiento> = mutableListOf()
 
         val database = this.readableDatabase
-        val query = "SELECT * FROM ${Constants.MOVIMIENTOS} WHERE tipo == Gasto"
+        val orden = if (ASC) "ASC" else "DESC"
+        val query =
+            "Select * FROM " + Constants.MOVIMIENTOS + " WHERE "+
+                    Constants.PROPERTY_TIPO + " LIKE " + "'"+ Constants.PROPERTY_GASTOS +"'"+
+                    "ORDER BY"+ "'"+ Constants.PROPERTY_DATE +"'"+" '"+orden+"'"
         val result = database.rawQuery(query,null)
 
         if(result.moveToFirst()){

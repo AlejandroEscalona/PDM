@@ -10,5 +10,7 @@ object Constants {
     const val PROPERTY_CATEGORIA = "categoria"
     const val PROPERTY_CANTIDAD = "cantidad"
     const val PROPERTY_DATE = "date"
+    const val PROPERTY_INGRESOS = "Ingresos"
+    const val PROPERTY_GASTOS = "Gastos"
 
 }

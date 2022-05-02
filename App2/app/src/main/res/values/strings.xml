@@ -3,6 +3,7 @@
     <string name="home_title">Inicio</string>
     <string name="home_incomes">Ingresos</string>
     <string name="home_costs">Gastos</string>
+    <string name="home_all">Todo</string>
     <string name="home_perfil">Perfil</string>
     <string name="home_movimientos">Movimientos</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -19,6 +20,8 @@
     <string name="borrado_exito">Borrado con exito</string>
     <string name="error_borrar">Error al borrar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="ASC">ASC</string>
+    <string name="DESC">DESC</string>
 
     <string-array name="gastosList">
         <item>@string/supermercado</item>
@@ -26,8 +29,22 @@
         <item>@string/vivienda</item>
         <item>@string/otros</item>
     </string-array>
+
     <string-array name="ingresosList">
         <item>@string/nomina</item>
         <item>@string/otros</item>
     </string-array>
+
+    <string-array name="tipoList">
+        <item>@string/home_all</item>
+        <item>@string/home_incomes</item>
+        <item>@string/home_costs</item>
+    </string-array>
+
+    <string-array name="DateList">
+        <item>@string/ASC</item>
+        <item>@string/DESC</item>
+    </string-array>
+
+
 </resources>

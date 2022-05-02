@@ -5,10 +5,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,6 +30,14 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         getMovimientos()
         binding.CantidadBalance.text = database.getBalance().toString()+"€"
         binding.recyclerViewMovimientos.setHasFixedSize(true)
+
+        val tipos = resources.getStringArray(R.array.tipoList)
+        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, tipos)
+        binding.autoCompleteTextView1.setAdapter(arrayAdapter)
+
+        val dates = resources.getStringArray(R.array.DateList)
+        val arrayAdapter1 = ArrayAdapter(this, R.layout.dropdown_item, dates)
+        binding.autoCompleteTextView2.setAdapter(arrayAdapter1)
 
         setupBottomNav()
 
@@ -116,6 +123,34 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     private fun getMovimientos(){
         val data = database.getAllMovimientos()
         movimientoAdapter = MovimientoAdapter(data,this)
+        binding.recyclerViewMovimientos.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = movimientoAdapter
+        }
+    }
+
+    fun onFilter(view: View){
+        val tipo = binding.autoCompleteTextView1.text.toString()
+        val date = binding.autoCompleteTextView2.text.toString()
+        var orden : Boolean = true
+        if(date == "DESC"){
+            orden = false
+        }
+        movimientoAdapter = when(tipo){
+            "Ingresos" -> {
+                val data = database.getAllIngresos(orden)
+                MovimientoAdapter(data,this)
+
+            }
+            "Gastos" -> {
+                val data = database.getAllGastos(orden)
+                MovimientoAdapter(data,this)
+            }
+            else -> {
+                val data = database.getAllMovimientos()
+                MovimientoAdapter(data,this)
+            }
+        }
         binding.recyclerViewMovimientos.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = movimientoAdapter

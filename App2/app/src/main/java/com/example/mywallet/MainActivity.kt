@@ -22,12 +22,14 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     private lateinit var database: DatabaseHelper
     private lateinit var movimientoAdapter: MovimientoAdapter
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         database = DatabaseHelper(this)
         getMovimientos()
+        binding.CantidadBalance.text = database.getBalance().toString()+"€"
         binding.recyclerViewMovimientos.setHasFixedSize(true)
 
         setupBottomNav()
@@ -68,9 +70,11 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         itemTouchHelper.attachToRecyclerView(binding.recyclerViewMovimientos)
     } // Fin onCreate
 
+    @SuppressLint("SetTextI18n")
     override fun onRestart() {
         super.onRestart()
         getMovimientos()
+        binding.CantidadBalance.text = database.getBalance().toString()+"€"
         binding.recyclerViewMovimientos.setHasFixedSize(true)
     }
 

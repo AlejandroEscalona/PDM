@@ -152,4 +152,21 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
         return result == 1
     }
 
+
+    @SuppressLint("Range")
+    fun getBalance(): Double{
+        var balance : Double = 0.0
+
+        val database = this.readableDatabase
+        val query = "SELECT * FROM ${Constants.MOVIMIENTOS}"
+        val result = database.rawQuery(query,null)
+
+        if(result.moveToFirst()){
+            do {
+               balance += result.getDouble(result.getColumnIndex(Constants.PROPERTY_CANTIDAD))
+            }while (result.moveToNext())
+        }
+        return balance
+    }
+
 }

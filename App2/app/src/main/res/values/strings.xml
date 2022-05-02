@@ -5,7 +5,22 @@
     <string name="home_costs">Gastos</string>
     <string name="home_perfil">Perfil</string>
     <string name="home_movimientos">Movimientos</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Camara">Cámara</string>
+    <string name="nomina">Nómina</string>
+    <string name="otros">Otros</string>
+    <string name="supermercado">Supermercado</string>
+    <string name="ropa">Ropa</string>
+    <string name="vivienda">Vivienda</string>
+
+    <string-array name="gastosList">
+        <item>@string/supermercado</item>
+        <item>@string/ropa</item>
+        <item>@string/vivienda</item>
+        <item>@string/otros</item>
+    </string-array>
+    <string-array name="ingresosList">
+        <item>@string/nomina</item>
+        <item>@string/otros</item>
+    </string-array>
 </resources>

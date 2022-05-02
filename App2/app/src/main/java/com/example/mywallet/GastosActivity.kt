@@ -2,6 +2,7 @@ package com.example.mywallet
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import com.example.mywallet.databinding.ActivityGastosBinding
 
 class GastosActivity : AppCompatActivity() {
@@ -16,6 +17,10 @@ class GastosActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true);
+
+        val categorias = resources.getStringArray(R.array.gastosList)
+        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, categorias)
+        binding.autoCompleteTextView.setAdapter(arrayAdapter)
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         binding.bottomNav.setOnNavigationItemSelectedListener {
             when(it.itemId){
                R.id.action_camera -> {
-                    val intent = Intent(this,MainActivity::class.java)
+                    val intent = Intent(this,CameraActivity::class.java)
                     launchIntent(intent)
                     true
                 }R.id.action_movements -> {
@@ -140,7 +140,6 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             "Ingresos" -> {
                 val data = database.getAllIngresos(orden)
                 MovimientoAdapter(data,this)
-
             }
             "Gastos" -> {
                 val data = database.getAllGastos(orden)

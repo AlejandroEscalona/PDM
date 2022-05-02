@@ -57,17 +57,20 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                             movimientoAdapter.remove(movimiento)
                             movimientoAdapter.notifyDataSetChanged()
                             Snackbar.make(binding.root, getString(R.string.borrado_exito), Snackbar.LENGTH_SHORT).show()
+                            binding.CantidadBalance.text = database.getBalance().toString()+"€"
+
                         }else
                             Snackbar.make(binding.root, getString(R.string.error_borrar), Snackbar.LENGTH_SHORT).show()
                     }
                     .setNegativeButton(getString(R.string.cancelar),null)
                 builder.create().show()
                 movimientoAdapter.notifyDataSetChanged()
+
             }
         }
-
         val itemTouchHelper = ItemTouchHelper(simpleItemTouchCallback)
         itemTouchHelper.attachToRecyclerView(binding.recyclerViewMovimientos)
+
     } // Fin onCreate
 
     @SuppressLint("SetTextI18n")
@@ -77,6 +80,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         binding.CantidadBalance.text = database.getBalance().toString()+"€"
         binding.recyclerViewMovimientos.setHasFixedSize(true)
     }
+
 
     private fun setupBottomNav(){
         binding.bottomNav.setOnNavigationItemSelectedListener {
@@ -107,9 +111,6 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             Toast.makeText(this,"No se encontro una app compatible", Toast.LENGTH_SHORT).show()
         }
     }
-
-
-
 
 
     private fun getMovimientos(){

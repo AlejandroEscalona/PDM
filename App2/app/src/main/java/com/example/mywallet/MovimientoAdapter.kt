@@ -28,7 +28,7 @@ class MovimientoAdapter(var movimientoList: MutableList<Movimiento>, private val
         return ViewHolder(view)
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "NotifyDataSetChanged")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val movimiento = movimientoList.get(position)
         holder.setListener(movimiento)
@@ -36,7 +36,6 @@ class MovimientoAdapter(var movimientoList: MutableList<Movimiento>, private val
         holder.binding.itemCategoria.text = movimiento.categoria
         holder.binding.itemCantidad.text = movimiento.cantidad.toString()+"€"
         holder.binding.itemFecha.text = movimiento.fecha
-
     }
 
     override fun getItemCount(): Int = movimientoList.size

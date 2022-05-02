@@ -33,19 +33,18 @@ class GastosActivity : AppCompatActivity() {
     }
 
     fun onSaveClicked(view: View) {
-
-        val inputCantidad = binding.etCantidad.text.toString().toDouble()
+        val inputCantidad = binding.etCantidad.text.toString().toDouble() * -1
         val inputCategoria = binding.autoCompleteTextView.text.toString()
 
         val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
         //Insertamos entreno en la base de datos
         //comprobando que al menos ha realizado algún ejercicio
 
-        val id = database.insertMovimiento("Gasto",inputCategoria,
+        val id = database.insertMovimiento("Gastos",inputCategoria,
             inputCantidad,(LocalDate.now().format(formatter)).toString())
         if(id != -1L ){
                 Snackbar.make(binding.root, getString(R.string.guardar_exito), Snackbar.LENGTH_SHORT).show()
             } else Snackbar.make(binding.root, getString(R.string.error_guardar), Snackbar.LENGTH_SHORT).show()
-
     }
+
 }

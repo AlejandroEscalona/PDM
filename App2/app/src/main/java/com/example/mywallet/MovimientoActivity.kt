@@ -17,8 +17,15 @@ class MovimientoActivity : AppCompatActivity() {
         binding = ActivityMovimientoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true);
+        supportActionBar?.setDisplayShowHomeEnabled(true);
+
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return false
+    }
 
     /**
      * @author Alejandro Escalona García
@@ -28,7 +35,7 @@ class MovimientoActivity : AppCompatActivity() {
     fun OnClickButton(view: View){
         when(view.id){
             R.id.cardIngresos -> {
-                val intent = Intent(this,GastosActivity::class.java)
+                val intent = Intent(this,IngresosActivity::class.java)
                 launchIntent(intent)
             }
             R.id.cardGastos -> {

@@ -14,6 +14,11 @@
     <string name="vivienda">Vivienda</string>
     <string name="guardar_exito">Movimiento guardado con exito</string>
     <string name="error_guardar">Error al guardar el movimiento</string>
+    <string name="borrar_movimiento">¿Desea borrar este movimiento?</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="borrado_exito">Borrado con exito</string>
+    <string name="error_borrar">Error al borrar</string>
+    <string name="cancelar">Cancelar</string>
 
     <string-array name="gastosList">
         <item>@string/supermercado</item>

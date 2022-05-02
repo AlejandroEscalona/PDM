@@ -23,8 +23,8 @@ class HomeFragment : Fragment() {
 
 //    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
 //        super.onViewCreated(itemView, savedInstanceState)
-////        val data = database.getAllMovimientos()
-////        movimientoAdapter = MovimientoAdapter(data,this)
+//        val data = database.getAllMovimientos()
+//        movimientoAdapter = MovimientoAdapter(data,this)
 //        mBinding.recyclerViewMovimientos.apply {
 //            // set a LinearLayoutManager to handle Android
 //            // RecyclerView behavior
@@ -38,14 +38,14 @@ class HomeFragment : Fragment() {
         TODO("Not yet implemented")
     }
 
-    fun getMovimientos(){
-        val data = database.getAllMovimientos()
-        movimientoAdapter = MovimientoAdapter(data,this)
-        mBinding.recyclerViewMovimientos.apply {
-            layoutManager = LinearLayoutManager(activity)
-            adapter = movimientoAdapter
-        }
-    }
+//    private fun getMovimientos(){
+//        val data = database.getAllMovimientos()
+//        movimientoAdapter = MovimientoAdapter(data,this)
+//        mBinding.recyclerViewMovimientos.apply {
+//            layoutManager = LinearLayoutManager(activity)
+//            adapter = movimientoAdapter
+//        }
+//    }
 
 
 

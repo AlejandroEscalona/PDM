@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mywallet.databinding.ItemMovimientoBinding
 
-class MovimientoAdapter(var movimientoList: MutableList<Movimiento>, private val listener: HomeFragment)
+class MovimientoAdapter(var movimientoList: MutableList<Movimiento>, private val listener: OnClickListener)
     :RecyclerView.Adapter<MovimientoAdapter.ViewHolder>(){
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -28,12 +28,13 @@ class MovimientoAdapter(var movimientoList: MutableList<Movimiento>, private val
         return ViewHolder(view)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val movimiento = movimientoList.get(position)
         holder.setListener(movimiento)
         holder.binding.itemTipo.text = movimiento.tipo
         holder.binding.itemCategoria.text = movimiento.categoria
-        holder.binding.itemCantidad.text = movimiento.cantidad.toString()
+        holder.binding.itemCantidad.text = movimiento.cantidad.toString()+"€"
         holder.binding.itemFecha.text = movimiento.fecha
 
     }

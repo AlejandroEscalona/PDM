@@ -12,6 +12,8 @@
     <string name="supermercado">Supermercado</string>
     <string name="ropa">Ropa</string>
     <string name="vivienda">Vivienda</string>
+    <string name="guardar_exito">Movimiento guardado con exito</string>
+    <string name="error_guardar">Error al guardar el movimiento</string>
 
     <string-array name="gastosList">
         <item>@string/supermercado</item>

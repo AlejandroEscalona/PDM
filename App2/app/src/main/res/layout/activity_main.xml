@@ -5,7 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/lock"
+        android:src="@drawable/ingresos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="LOCK"
+        app:icon="@drawable/ic_filter"
+        />
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,7 +107,7 @@
 
         </LinearLayout>
         <Button
-            android:id="@+id/btnSaveEstiramientos"
+            android:id="@+id/btnFilter"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

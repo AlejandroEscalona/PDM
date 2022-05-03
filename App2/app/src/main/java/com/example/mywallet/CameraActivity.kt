@@ -79,8 +79,6 @@ class CameraActivity : AppCompatActivity() {
                     image.close()
                     val array: ArrayList<String> = ArrayList(recognizedText.asList())
 
-
-
                     val inputCantidad = (((recognizedText.last())
                         .replace(",", "."))
                         .slice(8 until recognizedText.last().length)

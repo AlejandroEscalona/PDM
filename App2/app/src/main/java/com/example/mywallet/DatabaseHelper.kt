@@ -31,11 +31,14 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
      * Devuelve todos los movimientos
      */
     @SuppressLint("Range")
-    fun getAllMovimientos(): MutableList<Movimiento>{
+    fun getAllMovimientos(order: String): MutableList<Movimiento>{
         val movimientos : MutableList<Movimiento> = mutableListOf()
+        val orden: String
+
+
 
         val database = this.readableDatabase
-        val query = "SELECT * FROM ${Constants.MOVIMIENTOS}"
+        val query = "SELECT * FROM ${Constants.MOVIMIENTOS} ORDER BY id "+order
         val result = database.rawQuery(query,null)
 
         if(result.moveToFirst()){
@@ -57,16 +60,16 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
      * @author Alejandro Escalona García
      * Devuelve todos los movimientos tipo de ingresos
      */
-    @SuppressLint("Range")
-    fun getAllIngresos(ASC: Boolean = true): MutableList<Movimiento>{
+    @SuppressLint("Range", "Recycle")
+    fun getAllIngresos(order: String): MutableList<Movimiento>{
         val movimientos : MutableList<Movimiento> = mutableListOf()
 
         val database = this.readableDatabase
-        val orden = if (ASC) "ASC" else "DESC"
+
         val query =
             "Select * FROM " + Constants.MOVIMIENTOS + " WHERE " +
                     Constants.PROPERTY_TIPO + " LIKE " + "'"+ Constants.PROPERTY_INGRESOS +"'"+
-                    "ORDER BY"+ "'"+ Constants.PROPERTY_DATE +"'"+" "+orden
+                    "ORDER BY id "+order
         val result = database.rawQuery(query,null)
 
         if(result.moveToFirst()){
@@ -88,16 +91,15 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper
      * @author Alejandro Escalona García
      * Devuelve todos los movimientos de tipo gasto
      */
-    @SuppressLint("Range")
-    fun getAllGastos(ASC: Boolean = true): MutableList<Movimiento>{
+    @SuppressLint("Range", "Recycle")
+    fun getAllGastos(order: String): MutableList<Movimiento>{
         val movimientos : MutableList<Movimiento> = mutableListOf()
 
         val database = this.readableDatabase
-        val orden = if (ASC) "ASC" else "DESC"
         val query =
             "Select * FROM " + Constants.MOVIMIENTOS + " WHERE "+
                     Constants.PROPERTY_TIPO + " LIKE " + "'"+ Constants.PROPERTY_GASTOS +"'"+
-                    "ORDER BY"+ "'"+ Constants.PROPERTY_DATE +"'"+" '"+orden+"'"
+                    "ORDER BY id "+order
         val result = database.rawQuery(query,null)
 
         if(result.moveToFirst()){

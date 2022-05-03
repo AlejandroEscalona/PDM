@@ -121,7 +121,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
 
     private fun getMovimientos(){
-        val data = database.getAllMovimientos()
+        val data = database.getAllMovimientos("ASC")
         movimientoAdapter = MovimientoAdapter(data,this)
         binding.recyclerViewMovimientos.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
@@ -132,21 +132,18 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     fun onFilter(view: View){
         val tipo = binding.autoCompleteTextView1.text.toString()
         val date = binding.autoCompleteTextView2.text.toString()
-        var orden : Boolean = true
-        if(date == "DESC"){
-            orden = false
-        }
+
         movimientoAdapter = when(tipo){
             "Ingresos" -> {
-                val data = database.getAllIngresos(orden)
+                val data = database.getAllIngresos(date)
                 MovimientoAdapter(data,this)
             }
             "Gastos" -> {
-                val data = database.getAllGastos(orden)
+                val data = database.getAllGastos(date)
                 MovimientoAdapter(data,this)
             }
             else -> {
-                val data = database.getAllMovimientos()
+                val data = database.getAllMovimientos(date)
                 MovimientoAdapter(data,this)
             }
         }

@@ -17,6 +17,8 @@ import com.example.mywallet.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 import java.util.concurrent.Executor
 import androidx.biometric.BiometricPrompt;
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(), OnClickListener {
 
@@ -45,12 +47,14 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         val dates = resources.getStringArray(R.array.DateList)
         val arrayAdapter1 = ArrayAdapter(this, R.layout.dropdown_item, dates)
         binding.autoCompleteTextView2.setAdapter(arrayAdapter1)
-
         setupBottomNav()
 
         executor = ContextCompat.getMainExecutor(this)
+        binding.bottomNav.visibility = View.GONE
+
         biometricPrompt = BiometricPrompt(this, executor,
             object : BiometricPrompt.AuthenticationCallback() {
+
                 override fun onAuthenticationError(errorCode: Int,
                                                    errString: CharSequence) {
                     super.onAuthenticationError(errorCode, errString)
@@ -63,6 +67,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                     result: BiometricPrompt.AuthenticationResult) {
                     super.onAuthenticationSucceeded(result)
                     findViewById<Button>(R.id.lock).visibility = View.GONE
+                    binding.bottomNav.visibility = View.VISIBLE
                     Toast.makeText(applicationContext,
                         "Authentication succeeded!", Toast.LENGTH_SHORT)
                         .show()

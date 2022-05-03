@@ -7,6 +7,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils.replace
 import android.util.Log
 import android.widget.Toast
 import androidx.camera.core.*
@@ -14,36 +15,38 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.mywallet.databinding.ActivityCameraBinding
+import com.google.android.material.snackbar.Snackbar
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 class CameraActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCameraBinding
-    private lateinit var action: CameraAction
     private lateinit var imageCapture: ImageCapture
     private lateinit var cameraExecutor: ExecutorService
     private var scanner = Scanner()
+    private lateinit var database: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCameraBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        database = DatabaseHelper(this)
 
-        //action = intent.getSerializableExtra("action") as CameraAction
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
         supportActionBar?.setDisplayShowHomeEnabled(true);
 
 
-       // binding.textCamera.text = if (action == CameraAction.BARCODE) "Capturar Código de barras" else "Capturar precio"
         if(allPermissionsGranted()){
             startCamera()
         } else{
             ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
         }
 
-        binding.captureButton.setOnClickListener { takePhoto(action) }
+        binding.captureButton.setOnClickListener { takePhoto() }
 
 
         cameraExecutor = Executors.newSingleThreadExecutor()
@@ -61,7 +64,7 @@ class CameraActivity : AppCompatActivity() {
      *
      * @param action contexto en el que se ha abierto la cámara: Barcode o Price
      */
-    private fun takePhoto(action: CameraAction) {
+    private fun takePhoto() {
         imageCapture.takePicture(cameraExecutor,
             object: ImageCapture.OnImageCapturedCallback(){ //Se llama cuando capturamos una imagen
                 override fun onError(exception: ImageCaptureException) { // Si hay errores
@@ -70,27 +73,28 @@ class CameraActivity : AppCompatActivity() {
 
                 override fun onCaptureSuccess(image: ImageProxy) {
                     super.onCaptureSuccess(image)
-                    var data = Intent()
+                    //var data = Intent()
 
-                    when (action) {
-                        CameraAction.BARCODE -> {
-                            val value = scanner.analyzeBarcode(image,image.imageInfo.rotationDegrees)
-                            image.close()
-                            if(value != null){
-                                data.data = Uri.parse(value)
-                                setResult(RESULT_OK,data)
-                                finish()
-                            }
-                        }
-                        CameraAction.PRICE -> {
-                            val recognizedText = scanner.analyzeText(image,image.imageInfo.rotationDegrees)
-                            image.close()
-                            val array: ArrayList<String> = ArrayList(recognizedText.asList())
-                            data.putStringArrayListExtra("prices",array)
-                            setResult(RESULT_OK,data)
-                            finish()
-                        }
-                    }
+                    val recognizedText = scanner.analyzeText(image,image.imageInfo.rotationDegrees)
+                    image.close()
+                    val array: ArrayList<String> = ArrayList(recognizedText.asList())
+
+
+
+                    val inputCantidad = (((recognizedText.last())
+                        .replace(",", "."))
+                        .slice(8 until recognizedText.last().length)
+                        .toDouble()) * -1
+                    val inputCategoria = "Supermercado"
+
+                    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+
+                    val id = database.insertMovimiento("Gastos",inputCategoria,
+                        inputCantidad,(LocalDate.now().format(formatter)).toString())
+                    finish()
+                    if(id != -1L ){
+                        Snackbar.make(binding.root, getString(R.string.guardar_exito), Snackbar.LENGTH_SHORT).show()
+                    } else Snackbar.make(binding.root, getString(R.string.error_guardar), Snackbar.LENGTH_SHORT).show()
                 }
             }
         )
@@ -112,7 +116,7 @@ class CameraActivity : AppCompatActivity() {
                 cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageCapture)
             }
             catch(exc: Exception){
-                Log.e("ComprApp", "Use case binding failed", exc)
+                Log.e("Mywallet", "Use case binding failed", exc)
             }
         }, ContextCompat.getMainExecutor(this))
     }

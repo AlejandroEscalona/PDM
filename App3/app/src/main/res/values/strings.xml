@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Vit-Dapp</string>
+    <string name="main_error_message">Error con el servidor</string>
 </resources>

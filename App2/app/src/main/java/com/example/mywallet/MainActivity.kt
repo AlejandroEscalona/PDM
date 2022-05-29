@@ -96,7 +96,6 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             biometricPrompt.authenticate(promptInfo)
         }
 
-
 //        Borrado con swipe
         val simpleItemTouchCallback: ItemTouchHelper.SimpleCallback = object :
             ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {

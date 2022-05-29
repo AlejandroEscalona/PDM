@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Vit-Dapp</string>
-    <string name="main_error_message">Error con el servidor</string>
+    <string name="main_error_message">Error with server</string>
+    <string name="main_current_weather_title">Weather Current:</string>
+    <string name="main_forecast_weather_title">Weather Forecast:</string>
+
+    <string name="weather_uv">UVI: %.2f</string>
+    <string name="weather_dt">Hour: %s</string>
+    <string name="weather_humidity">Humidity: %d%%</string>
+    <string name="weather_pop">Pop: %.1f%%</string>
 </resources>

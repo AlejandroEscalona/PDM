@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="com.example.vit_dapp.common.utils.CommonUtils"/>
         <variable
             name="viewModel"
             type="com.example.vit_dapp.mainModule.viewModel.MainViewModel" />
@@ -36,7 +37,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTimeZone"
-            android:text="Current weather:"
+            android:text="@string/main_current_weather_title"
             />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,8 +53,8 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textColor="?attr/colorSecondaryVariant"
-                tools:text="32°"
-                android:text="@{String.valueOf(viewModel.result.current.uvi)}"
+                tools:text="4.5"
+                android:text="@{@string/weather_uv(viewModel.result.current.uvi)}"
                 android:gravity="center"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?attr/textAppearanceBody1"
                 tools:text="22:00"
-                android:text="@{String.valueOf(viewModel.result.current.dt)}"
+                android:text="@{CommonUtils.INSTANCE.getHour(viewModel.result.current.dt)}"
                 android:gravity="center"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -76,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?attr/textAppearanceOverline"
                 tools:text="Humidity: 65%"
-                android:text="@{String.valueOf(viewModel.result.current.humidity)}"
+                android:text="@{@string/weather_humidity(viewModel.result.current.humidity)}"
                 android:gravity="center"
                 app:layout_constraintStart_toStartOf="@id/tvDT"
                 app:layout_constraintTop_toBottomOf="@id/tvDT"

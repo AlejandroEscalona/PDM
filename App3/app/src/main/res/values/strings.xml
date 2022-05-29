@@ -4,7 +4,7 @@
     <string name="main_current_weather_title">Weather Current:</string>
     <string name="main_forecast_weather_title">Weather Forecast:</string>
 
-    <string name="weather_uv">UVI: %.2f</string>
+    <string name="weather_uv">UV: %.2f</string>
     <string name="weather_dt">Hour: %s</string>
     <string name="weather_humidity">Humidity: %d%%</string>
     <string name="weather_pop">Pop: %.1f%%</string>

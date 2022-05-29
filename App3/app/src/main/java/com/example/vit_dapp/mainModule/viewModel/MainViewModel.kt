@@ -19,7 +19,7 @@ class MainViewModel: ViewModel(){
     fun getSnackbarMessage(): LiveData<Int> = snackbarMessage
 
     private val loaded = MutableLiveData<Boolean>()
-    fun getLoaded(): LiveData<Boolean> = loaded
+    fun isLoaded(): LiveData<Boolean> = loaded
 
     suspend fun getWeatherAndForecast(lat: Double, lon: Double, appId: String,
                                       units: String, lang: String){

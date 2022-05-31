@@ -1,11 +1,20 @@
 package com.example.vit_dapp.mainModule.view
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+import android.graphics.Color
+import android.graphics.LightingColorFilter
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 import android.system.Os.remove
 import android.view.View
 import android.widget.AdapterView
 import androidx.activity.viewModels
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,19 +37,48 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: ForecastAdapter
+    val chanelID = "vit_dapp"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+
         setupViewModel()
         setupObservers()
         setupAdapter()
         setupRecyclerView()
-        removeItem()
+
     }
 
+    private fun showNotification(Titulo: String, Mensaje: String) {
+        //create notification channel
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
+            val name = "VIT DAPP"
+            val descriptionText = "VIT DAPP"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(chanelID, name, importance).apply {
+                enableLights(true)
+                LightingColorFilter(Color.RED, Color.RED)
+            }
+            val notificationManager: NotificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
+
+
+        //configure notification
+        val notification = NotificationCompat.Builder(this, chanelID)
+            .setSmallIcon(R.drawable.ic_notification)
+            .setContentTitle("$Titulo")
+            .setContentText("$Mensaje")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .build()
+
+        val notificationManager1 = NotificationManagerCompat.from(this)
+        notificationManager1.notify(1, notification)
+    }
 
 
 
@@ -50,7 +88,10 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                 Snackbar.make(binding.root,resMsg, Snackbar.LENGTH_LONG).show()
             }
             it.getResult().observe(this){ result ->
-                adapter.submitList(result.hourly.drop(1).dropLast(32))
+                adapter.submitList(result.hourly.drop(1).dropLast(28))
+                if (result.current.uvi > 0)
+                    showNotification("A las "+CommonUtils.getHour(result.current.dt)+" puedes tomar el sol",
+                        "Habra un uv de: ${result.current.uvi}")
             }
         }
     }
@@ -82,17 +123,15 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         }
     }
 
-    fun removeItem(){
-        val currentList =  adapter.currentList.toMutableList()
-        currentList.dropLast(40)
-        adapter.submitList(currentList)
-    }
 
 
     override fun onClick(forecast: Forecast) {
-
         Snackbar.make(binding.root,CommonUtils.getFullDate(forecast.dt), Snackbar.LENGTH_LONG).show()
     }
+
+    //create a notification and show it
+
+
 
 }
 

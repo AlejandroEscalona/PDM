@@ -18,6 +18,7 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.work.*
 import com.example.vit_dapp.R
 import com.example.vit_dapp.databinding.ActivityMainBinding
 import com.example.vit_dapp.mainModule.viewModel.MainViewModel
@@ -30,7 +31,8 @@ import com.example.vit_dapp.mainModule.view.adapter.ForecastAdapter
 import com.example.vit_dapp.mainModule.view.adapter.OnClickListener
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
-
+import java.io.IOException
+import java.util.concurrent.TimeUnit
 
 
 class MainActivity : AppCompatActivity(), OnClickListener {
@@ -42,6 +44,12 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        val saveRequest = PeriodicWorkRequestBuilder<DownloadWorker>(6, TimeUnit.HOURS)
+                .build()
+        WorkManager.getInstance(this).enqueue(saveRequest)
+
+
 
 
         setupViewModel()
@@ -82,16 +90,14 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
 
 
-    private fun setupObservers() {
+    fun setupObservers() {
     binding.viewModel?.let {
             it.getSnackbarMessage().observe(this){resMsg ->
                 Snackbar.make(binding.root,resMsg, Snackbar.LENGTH_LONG).show()
             }
             it.getResult().observe(this){ result ->
                 adapter.submitList(result.hourly.drop(1).dropLast(28))
-                if (result.current.uvi > 0)
-                    showNotification("A las "+CommonUtils.getHour(result.current.dt)+" puedes tomar el sol",
-                        "Habra un uv de: ${result.current.uvi}")
+                checkUv(result.hourly.toMutableList())
             }
         }
     }
@@ -114,6 +120,15 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         }
     }
 
+    fun checkUv(list: MutableList<Forecast>){
+        for (i in list.dropLast(28)){
+            if (i.uvi > 4.0 && i.uvi < 8.0){
+                showNotification("El "+CommonUtils.getFullDate(i.dt)+" puedes tomar el sol",
+                    "Habra un uv de: ${i.uvi}")
+            }
+        }
+    }
+
 
     override fun onStart() {
         super.onStart()
@@ -129,11 +144,24 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         Snackbar.make(binding.root,CommonUtils.getFullDate(forecast.dt), Snackbar.LENGTH_LONG).show()
     }
 
-    //create a notification and show it
 
+    inner class DownloadWorker(context: Context, params: WorkerParameters) : Worker(context, params) {
 
+        override fun doWork(): ListenableWorker.Result {
+            repeat(1) {
+                try {
+                    setupObservers()
+                } catch (e: IOException) {
+                    return Result.failure()
+                }
+            }
+
+            return ListenableWorker.Result.success()
+        }
+    }
 
 }
+
 
 
 

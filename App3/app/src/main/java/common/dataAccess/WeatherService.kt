@@ -2,6 +2,7 @@ package common.dataAccess
 
 import com.example.vit_dapp.common.entities.WeatherForecastEntity
 import com.example.vit_dapp.common.utils.Constants
+
 import retrofit2.http.GET
 import retrofit2.http.Query
 

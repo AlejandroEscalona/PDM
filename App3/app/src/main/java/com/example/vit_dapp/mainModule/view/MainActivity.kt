@@ -2,6 +2,7 @@ package com.example.vit_dapp.mainModule.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.system.Os.remove
 import android.view.View
 import android.widget.AdapterView
 import androidx.activity.viewModels
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         setupObservers()
         setupAdapter()
         setupRecyclerView()
-
+        removeItem()
     }
 
 
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                 Snackbar.make(binding.root,resMsg, Snackbar.LENGTH_LONG).show()
             }
             it.getResult().observe(this){ result ->
-                adapter.submitList(result.hourly)
+                adapter.submitList(result.hourly.drop(1).dropLast(32))
             }
         }
     }
@@ -81,8 +82,15 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         }
     }
 
+    fun removeItem(){
+        val currentList =  adapter.currentList.toMutableList()
+        currentList.dropLast(40)
+        adapter.submitList(currentList)
+    }
+
 
     override fun onClick(forecast: Forecast) {
+
         Snackbar.make(binding.root,CommonUtils.getFullDate(forecast.dt), Snackbar.LENGTH_LONG).show()
     }
 

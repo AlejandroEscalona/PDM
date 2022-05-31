@@ -1,5 +1,7 @@
 package com.example.vit_dapp.mainModule.view.adapter
 
+import android.annotation.SuppressLint
+import android.system.Os.remove
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +25,9 @@ class ForecastAdapter(private val listener: OnClickListener) :
             }
         }
     }
+
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context)

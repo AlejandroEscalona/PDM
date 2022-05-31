@@ -10,4 +10,5 @@ object Constants {
     const val APP_ID_PARAM = "appid"
     const val UNITS_PARAM = "units"
     const val LANG_PARAM = "lang"
+    const val EXCEPT_PARAM = "except=hourly[0]"
 }

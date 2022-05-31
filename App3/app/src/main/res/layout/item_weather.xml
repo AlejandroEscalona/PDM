@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.vit_dapp.common.utils.CommonUtils"/>
+        <variable
+            name="current"
+            type="com.example.vit_dapp.common.entities.Current" />
+        <variable
+            name="forecast"
+            type="com.example.vit_dapp.common.entities.Forecast" />
+    </data>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+    
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/common_padding_16dp"
+        android:paddingVertical="@dimen/common_padding_8dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="?attr/colorSecondaryVariant"
+            tools:text="4.5"
+            android:text="@{current != null ? @string/weather_uv(current.uvi) : @string/weather_uv(forecast.uvi)}"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBody1"
+            tools:text="22:00"
+            android:text="@{ current != null ? @string/weather_dt(CommonUtils.INSTANCE.getHour(current.dt)) : CommonUtils.INSTANCE.getFullDate(forecast.dt)}"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceOverline"
+            tools:text="Humidity: 65%"
+            android:text="@{current != null ? @string/weather_humidity(current.humidity) : @string/weather_humidity(forecast.humidity)}"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@id/tvDT"
+            app:layout_constraintTop_toBottomOf="@id/tvDT"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBody1"
+            tools:text="Cloudy"
+            android:text="@{current != null ? CommonUtils.INSTANCE.getWeatherMain(current.weather) : CommonUtils.INSTANCE.getWeatherMain(forecast.weather)}"
+
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceCaption"
+            tools:text="Few clouds"
+            android:text="@{current != null ? CommonUtils.INSTANCE.getWeatherDescription(current.weather) : CommonUtils.INSTANCE.getWeatherDescription(forecast.weather)}"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@id/tvMain"
+            app:layout_constraintTop_toBottomOf="@id/tvMain"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/color_divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

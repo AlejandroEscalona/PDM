@@ -118,6 +118,43 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+        <include
+        android:id="@+id/current"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/item_weather"
+        app:current="@{viewModel.result.current}"
+        app:isGone="@{!viewModel.isLoaded()}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCurrentTitle"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvForecastTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textColor="?attr/colorPrimaryVariant"
+            app:isGone="@{!viewModel.isLoaded()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/current"
+            android:text="@string/main_forecast_weather_title"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            tools:listitem="@layout/item_weather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvForecastTitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingVertical="@dimen/common_padding_16dp"
+            />
+
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progressBar"
             android:layout_width="0dp"
